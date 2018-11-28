@@ -1,0 +1,26 @@
+$breakpoints: (
+  "phone":        320px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1200px,
+  "desktop-md":   1440px,
+  "desktop-lg":   1600px,
+  "desktop-xl":   1920px,
+);
+
+$z-index: (
+  "hamburger": 15,
+  "nav-over": 10,
+  "header-circle-logo": 5,
+  "header": 5
+);
+
+$font-stack: 'Roboto', sans-serif;
+
+// Colors
+$black-dark: #1a1a1a;
+$black: #333;
+$red: #B30000;
+$primary: #FFF41D;
+$white: #fff;
+

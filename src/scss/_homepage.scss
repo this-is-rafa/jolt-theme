@@ -1,0 +1,124 @@
+.banner {
+  height: 0;
+  margin-bottom: 40px;
+  position: relative;
+  padding-top: 56.25%;
+  width: 100%;
+  overflow: hidden;
+
+  &__image {
+    //background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center top;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.schedules {
+  margin-bottom: 40px;
+}
+
+.schedule {
+  color: $white;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  width: 100%;
+
+  &__header {
+    background-color: transparent;
+    padding: 0 5px 10px 5px;
+  }
+
+  & tr:nth-child(even) {
+    background-color: lighten($black, 10);
+  }
+
+  &__row {
+    padding: 5px;
+  }
+
+  &__col {
+    padding: 5px;
+
+    &--time {
+      font-weight: 700;
+    }
+  }
+}
+
+.posts {
+  margin-bottom: 100px;
+}
+
+.card {
+  display: block;
+  color: $white;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+
+  &__wrap {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;  
+    width: 100%;
+  }
+
+  &__img {
+    bottom: 0;
+    display: block;
+    left: 0;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 15px;
+
+    &--top {
+      bottom: 46px;
+    }
+
+    &--chev {
+      right: 0;
+    }
+  }
+
+  &__titles {
+    background-color: $black-dark;
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+
+    &--main {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    &--subtitle {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}
