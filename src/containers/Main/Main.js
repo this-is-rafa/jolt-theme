@@ -4,7 +4,7 @@ import Homepage from '../../scenes/Homepage/Homepage';
 
 const JoltSettings = window.JoltSettings;
 
-const Main = () => (
+const main = () => (
   <main className='c-wrap'>
     <Switch>
       <Route exact path={JoltSettings.path} component={Homepage}/>
@@ -12,4 +12,4 @@ const Main = () => (
   </main>
 )
 
-export default Main;
+export default main;

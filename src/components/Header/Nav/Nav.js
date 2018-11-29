@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../UI/Icon/Icon';
 
-const Nav = () => (
+const nav = () => (
   <nav className="nav">
     <Link to='/' className="nav__logo-link nav__logo-link--circle">
       <img className="nav__logo-img" alt="logo circle" 
@@ -40,4 +40,4 @@ const Nav = () => (
   </nav>
 );
 
-export default Nav;
+export default nav;

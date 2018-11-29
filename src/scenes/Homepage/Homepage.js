@@ -1,12 +1,11 @@
 import React from 'react';
-import HomeBlock from './components/HomeBlock/HomeBlock';
+import UpcomingShows from './components/UpcomingShows/UpcomingShows';
 import Wrap from '../../hoc/Wrap/Wrap';
 
-const Homepage = () => (
+const homepage = () => (
   <Wrap>
-    <HomeBlock title="Live Schedule" />
-    <HomeBlock title="Upcoming Shows" />
+    <UpcomingShows />
   </Wrap>
 );
 
-export default Homepage;
+export default homepage;
