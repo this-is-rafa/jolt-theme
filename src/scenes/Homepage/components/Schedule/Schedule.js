@@ -26,12 +26,12 @@ class Schedule extends Component {
       })
       .then( function(results) {
         let allEvents = [];
-        
+        console.log(results);
         results.forEach(function(single) {
           allEvents.push(single);
         });
 
-        _this.setState({events: allEvents});
+        _this.setState({events: results});
       })
       .catch(function(error) {
         console.log('Could not fetch events: ' + error.message);

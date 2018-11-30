@@ -2,39 +2,46 @@ import React, { Component } from 'react';
 
 class TimeTable extends Component {
 
-  renderEvents() {
-    return this.props.events.map( (event, i) => {
-      let startTime = new Date(event.start.dateTime).toLocaleTimeString('en-US', {formatMatcher: 'basic', hour: 'numeric', minute: 'numeric' });
+  renderEvents(day) {
+    return day.map( (event, i) => {
       return(
           <tr className="schedule__row" key={i}>
             <td className="schedule__col schedule__col--time">
-              {startTime}
+              {event.startTime}
             </td>
             <td className="schedule__col">
-              {event.summary}
+              {event.title}
             </td>
           </tr>
       );
     });
   }
 
-  render() {
-    return(
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <table class="schedule">
-            <thead class="schedule__thead">
+  renderDays() {
+    return this.props.events.map( (day, i) => {
+      return(
+        <div className="col-md-4" key={i}>
+          <table className="schedule">
+            <thead className="schedule__thead">
               <tr>
-                <th class="schedule__header" colspan="2">
-                  Wednesday, November 14
+                <th className="schedule__header" colSpan="2">
+                  { day.date }
                 </th>
               </tr>
             </thead>
-            <tbody class="schedule__tbody">
-              { this.renderEvents() }
+            <tbody className="schedule__tbody">
+              { this.renderEvents(day.events) }
             </tbody>
           </table>
         </div>
+      );
+    });
+  }
+
+  render() {
+    return(
+      <div className="row no-gutters">
+        { this.renderDays() }
       </div>
     );
   }
