@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../../../../components/UI/Button/Button';
 import HomeBlock from '../HomeBlock/HomeBlock';
 import TimeTable from './TimeTable/TimeTable';
 
@@ -44,6 +45,11 @@ class Schedule extends Component {
         <div className="container">
           <HomeBlock title="Upcoming Shows">
             <TimeTable events={this.state.events} />
+            <div class="c-flex-pos c-flex-pos--right">
+              <Button>
+                More
+              </Button>
+            </div>
           </HomeBlock>
         </div>
       </section>
