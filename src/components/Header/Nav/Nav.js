@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../UI/Icon/Icon';
+import MenuButton from './MenuButton/MenuButton';
 
-const nav = () => (
+const nav = (props) => (
   <nav className="nav">
     <Link to='/' className="nav__logo-link nav__logo-link--circle">
       <img className="nav__logo-img" alt="logo circle" 
@@ -33,10 +34,7 @@ const nav = () => (
       <Icon name="ig" parentClass="nav" />
     </a>
 
-    <div className="hamburger" id="js-hamburger">
-      <div id="js-hamburger-line-top" className="hamburger__open-line hamburger__open-line--top"></div>
-      <div id="js-hamburger-line-bottom" className="hamburger__open-line hamburger__open-line--bottom"></div>
-    </div>
+    <MenuButton clicked={props.menuClick} open={props.open} />
   </nav>
 );
 

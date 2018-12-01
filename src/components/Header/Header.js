@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from './Nav/Nav';
 import AudioPlayer from './AudioPlayer/AudioPlayer';
+import NavMobile from './NavMobile/NavMobile';
 
-const header = () => (
-  <header className="header">
-    <Nav />
-    <AudioPlayer />
-  </header>
-)
+class Header extends Component {
+  state = {
+    menuOpen: false
+  }
 
-export default header;
+  openMenuHandler = () => {
+    let menuState = this.state.menuOpen;
+    this.setState({menuOpen: !menuState});
+  }
+
+  render() {
+    return(
+      <header className="header">
+        <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
+        <AudioPlayer />
+        <NavMobile open={this.state.menuOpen} />
+      </header>
+    );
+  }
+}
+
+export default Header;
