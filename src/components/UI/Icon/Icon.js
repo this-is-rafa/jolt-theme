@@ -2,7 +2,7 @@ import React from 'react';
 //import './icons.svg';
 
 const Icon = (props) => (
-  <svg className={`${props.parentClass}__icon`}>
+  <svg className={`${props.parentClass}__icon ${props.parentClass}__icon--${props.name}`}>
     <use xlinkHref={`#icon-${props.name}`} />
   </svg>
 );
