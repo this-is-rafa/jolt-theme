@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavMobile = (props) => (
-  <nav id="js-nav-over" className={props.open ? 'nav-over nav-over--open' : 'nav-over'}>
+  <nav className={props.open ? 'nav-over nav-over--open' : 'nav-over'} >
     <Link to="/" className="nav-over__link">Home</Link>
     <Link to="/" className="nav-over__link">Shows</Link>
     <Link to="/" className="nav-over__link">Archive</Link>

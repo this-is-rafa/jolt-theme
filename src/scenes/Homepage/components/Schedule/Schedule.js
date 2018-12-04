@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Button from '../../../../components/UI/Button/Button';
 import HomeBlock from '../HomeBlock/HomeBlock';
 import TimeTable from './TimeTable/TimeTable';
 
 const JoltSettings = window.JoltSettings;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    incrementLoad: () => {
+      const action = {type: 'LOAD'};
+      dispatch(action);
+    },
+    decrementLoad: () => {
+      const action = {type: 'UNLOAD'};
+      dispatch(action);
+    }
+  }
+}
 
 class Schedule extends Component {
 
@@ -16,6 +30,7 @@ class Schedule extends Component {
   }
 
   getEvents() {
+    this.props.incrementLoad();
     let _this = this;
 
     fetch(JoltSettings.URL.api + '/jolt-cal')
@@ -33,6 +48,7 @@ class Schedule extends Component {
         });
 
         _this.setState({events: results});
+        _this.props.decrementLoad();
       })
       .catch(function(error) {
         console.log('Could not fetch events: ' + error.message);
@@ -58,4 +74,4 @@ class Schedule extends Component {
 
 }
 
-export default Schedule;
+export default connect(null, mapDispatchToProps)(Schedule);

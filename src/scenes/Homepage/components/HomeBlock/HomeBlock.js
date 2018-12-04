@@ -1,8 +1,8 @@
 import React from 'react';
 
 const homeBlock = (props) => (
-  <div class="c-bg-wrap">
-    <h4 class="section-title">{props.title}</h4>
+  <div className="c-bg-wrap">
+    <h4 className="section-title">{props.title}</h4>
     {props.children}
   </div>
 )

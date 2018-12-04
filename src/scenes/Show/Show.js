@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import HomeBlock from '../HomeBlock/HomeBlock';
-import PostList from '../PostList/PostList';
+import SinglePost from './containers/SinglePost/SinglePost';
 
 const JoltSettings = window.JoltSettings;
+const initialState = 'initial-state';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -18,54 +18,53 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-class UpcomingShows extends Component {
+class Show extends Component {
 
   state = {
-    posts: []
-  };
-
-  componentDidMount() {
-    this.getShows();
+    show: initialState
   }
 
-  getShows() {
-    this.props.incrementLoad();
-    let _this = this;
+  componentDidMount() {
+    console.log('[Show] did Mount');
+    this.getShow();
+  }
 
-    fetch(JoltSettings.URL.api + '/artists/?per_page=6&_embed')
+  getShow() {
+    this.props.incrementLoad();
+
+    let _this = this;
+    let url = window.location.href.split('/');
+    let slug = url.pop() || url.pop();
+
+    console.log(JoltSettings.URL.api + '/artists?slug=' + slug + '&_embed');
+
+    fetch(JoltSettings.URL.api + '/artists?slug=' + slug + '&_embed')
       .then( function(response) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
+
         return response.json();
       })
       .then( function(results) {
-        let allPosts = [];
-        
-        results.forEach(function(single) {
-          allPosts.push(single);
-        });
 
-        _this.setState({posts: allPosts});
+        _this.setState({show: results[0]});
         _this.props.decrementLoad();
       })
       .catch(function(error) {
         console.log('Could not fetch shows: ' + error.message);
       });
   }
-
+  
   render() {
-    return(
-      <section className="posts">
-        <div className="container">
-          <HomeBlock title="Upcoming Shows">
-            <PostList posts={this.state.posts} baseUrl="artist/" />
-          </HomeBlock>
-        </div>
-      </section>
-    );
-  };
+    let single = <SinglePost post={this.state.show} />;
 
+    return (
+      <div>
+      {this.state.show && this.state.show.title ? single : <p>Not Found</p>}
+      </div>
+    );
+  }
 }
 
-export default connect(null, mapDispatchToProps)(UpcomingShows);
+export default connect(null, mapDispatchToProps)(Show);

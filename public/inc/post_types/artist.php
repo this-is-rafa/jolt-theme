@@ -34,8 +34,9 @@ function ci_create_cpt_artist()
 		'supports'        => array( 'title', 'editor', 'thumbnail' ),
     'menu_icon'       => 'dashicons-admin-users',
     'show_in_rest'    => true,
-    'rest_base'          => 'artists',
-  	'rest_controller_class' => 'WP_REST_Posts_Controller'
+    'rest_base'       => 'artists',
+    'rest_controller_class' => 'WP_REST_Posts_Controller',
+    'taxonomies'      => array('artist-category')
 	);
 
 	register_post_type( 'cpt_artist' , $args );

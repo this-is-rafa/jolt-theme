@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../../../../components/Card/Card';
+import Card from '../Card/Card';
 
 class PostList extends Component {
 

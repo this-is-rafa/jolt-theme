@@ -46,7 +46,8 @@ function ci_tax_create_taxonomies() {
 	register_taxonomy( 'artist-category', array( 'cpt_artist' ), array(
 		'labels'            => $labels,
 		'hierarchical'      => true,
-		'show_admin_column' => true,
+    'show_admin_column' => true,
+    'show_in_rest'      => true,
 		'rewrite'           => array( 'slug' => _x( 'artist-category', 'taxonomy slug', 'ci_theme' ) ),
 	) );
 
