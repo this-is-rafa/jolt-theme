@@ -9,7 +9,7 @@ const baseUrl = JoltSettings.path;
 
 const nav = (props) => (
   <nav className="nav">
-    <Link to='/' className="nav__logo-link nav__logo-link--circle">
+    <Link to={baseUrl} className="nav__logo-link nav__logo-link--circle">
       <img className="nav__logo-img" alt="logo circle" 
         src={imageUrl + 'jolt-circle-logo.png'}
         srcset={imageUrl + 'jolt-circle-logo.png, ' + 
@@ -18,7 +18,7 @@ const nav = (props) => (
       />
     </Link>
 
-    <Link to='/' className="nav__logo-link nav__logo-link--text">
+    <Link to={baseUrl} className="nav__logo-link nav__logo-link--text">
       <img className="nav__logo-img" alt="logo text" 
       src="images/jolt-text-logo.png"
       srcset="images/jolt-text-logo.png,
@@ -28,7 +28,7 @@ const nav = (props) => (
     </Link>
 
     <Link to={baseUrl} className="nav__link">Home</Link>
-    <Link to={baseUrl + '/shows'} className="nav__link">Shows</Link>
+    <Link to={baseUrl + 'shows'} className="nav__link">Shows</Link>
     <Link to='/' className="nav__link">Archive</Link>
     <Link to='/' className="nav__link">Contact</Link>
     <a href="http://facebook.com/joltradio" className="nav__link" target="_blank" rel="noopener noreferrer nofollow">
