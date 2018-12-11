@@ -85,7 +85,7 @@ class CatList extends Component {
 
   render() {
     return(
-      <div class="container">
+      <div className="container">
         <TitleBlock title={this.state.catName} >
           <PostList posts={this.state.posts} baseUrl={baseUrl} />
         </TitleBlock>
