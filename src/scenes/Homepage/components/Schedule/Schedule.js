@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '../../../../components/UI/Button/Button';
-import HomeBlock from '../HomeBlock/HomeBlock';
+import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import TimeTable from './TimeTable/TimeTable';
 
 const JoltSettings = window.JoltSettings;
@@ -59,14 +59,14 @@ class Schedule extends Component {
     return(
       <section className="schedule">
         <div className="container">
-          <HomeBlock title="Upcoming Shows">
+          <TitleBlock title="Upcoming Shows">
             <TimeTable events={this.state.events} />
             <div class="c-flex-pos c-flex-pos--right">
               <Button>
                 More
               </Button>
             </div>
-          </HomeBlock>
+          </TitleBlock>
         </div>
       </section>
     );

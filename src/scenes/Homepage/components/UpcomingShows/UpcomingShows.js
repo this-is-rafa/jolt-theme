@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import HomeBlock from '../HomeBlock/HomeBlock';
+import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import PostList from '../PostList/PostList';
 
 const JoltSettings = window.JoltSettings;
@@ -58,9 +58,9 @@ class UpcomingShows extends Component {
     return(
       <section className="posts">
         <div className="container">
-          <HomeBlock title="Upcoming Shows">
+          <TitleBlock title="Upcoming Shows">
             <PostList posts={this.state.posts} baseUrl="artist/" />
-          </HomeBlock>
+          </TitleBlock>
         </div>
       </section>
     );

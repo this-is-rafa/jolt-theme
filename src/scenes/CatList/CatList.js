@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import TitleBlock from '../../components/TitleBlock/TitleBlock';
 import PostList from '../../components/PostList/PostList';
 
 const JoltSettings = window.JoltSettings;
@@ -22,7 +23,8 @@ class CatList extends Component {
 
   state = {
     posts: [],
-    catId: null
+    catId: null,
+    catName: ''
   };
 
   componentDidMount() {
@@ -43,7 +45,11 @@ class CatList extends Component {
         return response.json();
       })
       .then( function(results) {
-        _this.setState({catId: results[0].id});
+        _this.setState({
+          catId: results[0].id,
+          catName: results[0].name
+        });
+        console.log(results[0]);
         _this.getShowsByCatId();
       })
       .catch(function(error) {
@@ -80,7 +86,9 @@ class CatList extends Component {
   render() {
     return(
       <div class="container">
-        <PostList posts={this.state.posts} baseUrl={baseUrl} />
+        <TitleBlock title={this.state.catName} >
+          <PostList posts={this.state.posts} baseUrl={baseUrl} />
+        </TitleBlock>
       </div>
     );
   }
