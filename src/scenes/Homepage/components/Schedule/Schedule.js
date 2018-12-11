@@ -61,7 +61,7 @@ class Schedule extends Component {
         <div className="container">
           <TitleBlock title="Upcoming Shows">
             <TimeTable events={this.state.events} />
-            <div class="c-flex-pos c-flex-pos--right">
+            <div className="c-flex-pos c-flex-pos--right">
               <Button>
                 More
               </Button>
