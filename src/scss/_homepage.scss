@@ -97,10 +97,19 @@
     bottom: 15px;
 
     &--top {
-      bottom: 46px;
+      bottom: 40px;
+
+      @include mq('phablet') {
+        bottom: 44px;
+      }
+
+      @include mq('desktop') {
+        bottom: 46px;
+      }
     }
 
     &--chev {
+      display: none;
       right: 0;
     }
   }
@@ -112,14 +121,30 @@
     text-decoration: none;
 
     &--main {
-      font-size: 18px;
+      font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
+
+      @include mq('phablet') {
+        font-size: 15px;
+      }
+
+      @include mq('desktop') {
+        font-size: 18px;
+      }
     }
 
     &--subtitle {
-      font-size: 14px;
+      font-size: 10px;
       font-weight: 400;
+
+      @include mq('phablet') {
+        font-size: 13px;
+      }
+
+      @include mq('desktop') {
+        font-size: 14px;
+      }
     }
   }
 }
