@@ -20,10 +20,10 @@ const nav = (props) => (
 
     <Link to={baseUrl} className="nav__logo-link nav__logo-link--text">
       <img className="nav__logo-img" alt="logo text" 
-      src="images/jolt-text-logo.png"
-      srcset="images/jolt-text-logo.png,
-              images/jolt-text-logo--2x.png 2x,
-              images/jolt-text-logo--3x.png 3x"
+      src={imageUrl + 'jolt-text-logo.png'}
+      srcset={imageUrl + 'jolt-text-logo.png, ' +
+              imageUrl + 'jolt-text-logo--2x.png 2x, ' +
+              imageUrl + 'jolt-text-logo--3x.png 3x'}
       />
     </Link>
 
