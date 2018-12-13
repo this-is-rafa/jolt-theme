@@ -62,7 +62,7 @@ class UpcomingShows extends Component {
           <TitleBlock title="Upcoming Shows">
             <PostList posts={this.state.posts} baseUrl="artist/" />
             <div className="c-flex-pos c-flex-pos--right">
-              <Link to="/shows" className="btn">
+              <Link to="shows" className="btn">
                 All Shows
               </Link>
             </div>
