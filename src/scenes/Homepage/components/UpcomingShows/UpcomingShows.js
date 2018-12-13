@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import PostList from '../PostList/PostList';
 
@@ -60,6 +61,11 @@ class UpcomingShows extends Component {
         <div className="container">
           <TitleBlock title="Upcoming Shows">
             <PostList posts={this.state.posts} baseUrl="artist/" />
+            <div className="c-flex-pos c-flex-pos--right">
+              <Link to="/shows" className="btn">
+                All Shows
+              </Link>
+            </div>
           </TitleBlock>
         </div>
       </section>
