@@ -44,22 +44,23 @@ function ci_create_cpt_artist()
 }
 endif;
 
-add_action( 'load-post.php', 'ci_cpt_artist_meta_boxes_setup' );
-add_action( 'load-post-new.php', 'ci_cpt_artist_meta_boxes_setup' );
+// add_action( 'load-post.php', 'ci_cpt_artist_meta_boxes_setup' );
+// add_action( 'load-post-new.php', 'ci_cpt_artist_meta_boxes_setup' );
 
-if ( !function_exists( 'ci_cpt_artist_meta_boxes_setup' ) ):
-function ci_cpt_artist_meta_boxes_setup() {
-	add_action( 'add_meta_boxes', 'ci_cpt_artist_add_meta_boxes' );
-	add_action( 'save_post', 'ci_cpt_artist_save_meta', 10, 2 );
-}
-endif;
+// if ( !function_exists( 'ci_cpt_artist_meta_boxes_setup' ) ):
+// function ci_cpt_artist_meta_boxes_setup() {
+// 	add_action( 'add_meta_boxes', 'ci_cpt_artist_add_meta_boxes' );
+// 	add_action( 'save_post', 'ci_cpt_artist_save_meta', 10, 2 );
+// }
+// endif;
 
-if ( !function_exists( 'ci_cpt_artist_add_meta_boxes' ) ):
-function ci_cpt_artist_add_meta_boxes() {
-	add_meta_box( 'artist-box', __( 'Artist Settings', 'ci_theme' ), 'ci_cpt_artist_meta_box', 'cpt_artist', 'normal', 'high' );
-}
-endif;
+// if ( !function_exists( 'ci_cpt_artist_add_meta_boxes' ) ):
+// function ci_cpt_artist_add_meta_boxes() {
+// 	add_meta_box( 'artist-box', __( 'Artist Settings', 'ci_theme' ), 'ci_cpt_artist_meta_box', 'cpt_artist', 'normal', 'high' );
+// }
+// endif;
 
+if (false) :
 if ( !function_exists( 'ci_cpt_artist_meta_box' ) ):
 function ci_cpt_artist_meta_box( $object, $box ) {
 	ci_prepare_metabox( 'cpt_artist' );
@@ -107,66 +108,66 @@ function ci_cpt_artist_meta_box( $object, $box ) {
 				''      => '&nbsp',
 				'left'  => __( 'Always left', 'ci_theme' ),
 				'right' => __( 'Always right', 'ci_theme' ),
-			);
+			); 
 			ci_metabox_dropdown( 'meta_placement', $options, __( 'Sidebar placement:', 'ci_theme' ) );
 		ci_metabox_close_tab();
 
 	?></div><?php
 }
 endif;
-
-if ( !function_exists( 'ci_cpt_artist_save_meta' ) ):
-function ci_cpt_artist_save_meta( $post_id, $post ) {
+endif; //false!
+// if ( !function_exists( 'ci_cpt_artist_save_meta' ) ):
+// function ci_cpt_artist_save_meta( $post_id, $post ) {
 	
-	if ( !ci_can_save_meta('cpt_artist') ) return;
+// 	if ( !ci_can_save_meta('cpt_artist') ) return;
 
-	update_post_meta( $post_id, 'ci_cpt_artist_fields', ci_theme_sanitize_artist_fields_repeating( $_POST ) );
+// 	update_post_meta( $post_id, 'ci_cpt_artist_fields', ci_theme_sanitize_artist_fields_repeating( $_POST ) );
 
-	update_post_meta( $post_id, 'meta_placement', in_array( $_POST['meta_placement'], array('left', 'right') ) ? $_POST['meta_placement'] : '' );
+// 	update_post_meta( $post_id, 'meta_placement', in_array( $_POST['meta_placement'], array('left', 'right') ) ? $_POST['meta_placement'] : '' );
 
-}
-endif;
+// }
+// endif;
 
 
-if ( ! function_exists( 'ci_theme_sanitize_artist_fields_repeating' ) ) :
-function ci_theme_sanitize_artist_fields_repeating( $POST_array ) {
-	if ( empty( $POST_array ) || !is_array( $POST_array ) ) {
-		return false;
-	}
+// if ( ! function_exists( 'ci_theme_sanitize_artist_fields_repeating' ) ) :
+// function ci_theme_sanitize_artist_fields_repeating( $POST_array ) {
+// 	if ( empty( $POST_array ) || !is_array( $POST_array ) ) {
+// 		return false;
+// 	}
 
-	$titles       = $POST_array['ci_cpt_artist_fields_repeatable_title'];
-	$descriptions = $POST_array['ci_cpt_artist_fields_repeatable_description'];
+// 	$titles       = $POST_array['ci_cpt_artist_fields_repeatable_title'];
+// 	$descriptions = $POST_array['ci_cpt_artist_fields_repeatable_description'];
 
-	$count = max( count( $titles ), count( $descriptions ) );
+// 	$count = max( count( $titles ), count( $descriptions ) );
 
-	$new_fields = array();
+// 	$new_fields = array();
 
-	$records_count = 0;
-	$allowed_html = array(
-		'a'      => array(
-			'href'  => array(),
-			'class' => array(),
-		),
-		'span'   => array(
-			'class' => array(),
-		),
-		'i'      => array(
-			'class' => array(),
-		),
-		'b'      => array(),
-		'em'     => array(),
-		'strong' => array(),
-	);
+// 	$records_count = 0;
+// 	$allowed_html = array(
+// 		'a'      => array(
+// 			'href'  => array(),
+// 			'class' => array(),
+// 		),
+// 		'span'   => array(
+// 			'class' => array(),
+// 		),
+// 		'i'      => array(
+// 			'class' => array(),
+// 		),
+// 		'b'      => array(),
+// 		'em'     => array(),
+// 		'strong' => array(),
+// 	);
 
-	for ( $i = 0; $i < $count; $i++ ) {
-		if( empty( $titles[ $i ] ) && empty( $descriptions[ $i ] ) )
-			continue;
+// 	for ( $i = 0; $i < $count; $i++ ) {
+// 		if( empty( $titles[ $i ] ) && empty( $descriptions[ $i ] ) )
+// 			continue;
 
-		$new_fields[ $records_count ]['title']       = sanitize_text_field( $titles[ $i ] );
-		$new_fields[ $records_count ]['description'] = wp_kses( $descriptions[ $i ], $allowed_html );
-		$records_count++;
-	}
-	return $new_fields;
-}
-endif;
+// 		$new_fields[ $records_count ]['title']       = sanitize_text_field( $titles[ $i ] );
+// 		$new_fields[ $records_count ]['description'] = wp_kses( $descriptions[ $i ], $allowed_html );
+// 		$records_count++;
+// 	}
+// 	return $new_fields;
+// }
+// endif;
 ?>

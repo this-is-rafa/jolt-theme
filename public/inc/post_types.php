@@ -6,13 +6,13 @@ add_action('after_setup_theme', 'ci_load_custom_post_type_files');
 if( !function_exists('ci_load_custom_post_type_files') ):
 function ci_load_custom_post_type_files() {
 	$cpt_files = apply_filters('load_custom_post_type_files', array(
-		'inc/post_types/post',
-		'inc/post_types/page',
-		'inc/post_types/slider',
-		'inc/post_types/event',
-		'inc/post_types/discography',
-		'inc/post_types/video',
-		'inc/post_types/gallery',
+		//'inc/post_types/post',
+		//'inc/post_types/page',
+		//'inc/post_types/slider',
+		//'inc/post_types/event',
+		//'inc/post_types/discography',
+		//'inc/post_types/video',
+		//'inc/post_types/gallery',
 		'inc/post_types/artist'
 	));
 	foreach($cpt_files as $cpt_file) get_template_part($cpt_file);
