@@ -34,6 +34,11 @@ h6, .h6 {
 .c-bg-wrap {
   background-color: $black-dark;
   padding: 15px;
+  margin: 0 -15px;
+
+  @include mq('tablet') {
+    margin: 0 auto;
+  }
 }
 
 .c-flex-pos {
