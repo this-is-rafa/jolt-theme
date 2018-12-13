@@ -18,7 +18,7 @@ class Header extends Component {
       <header className="header">
         <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
         <AudioPlayer />
-        <NavMobile open={this.state.menuOpen} />
+        <NavMobile close={this.openMenuHandler} open={this.state.menuOpen} />
       </header>
     );
   }

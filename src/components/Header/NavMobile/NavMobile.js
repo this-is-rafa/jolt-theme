@@ -6,8 +6,8 @@ const baseUrl = JoltSettings.path;
 
 const NavMobile = (props) => (
   <nav className={props.open ? 'nav-over nav-over--open' : 'nav-over'} >
-    <Link to={baseUrl} className="nav-over__link">Home</Link>
-    <Link to={baseUrl + 'shows'} className="nav-over__link">Shows</Link>
+    <Link to={baseUrl} onClick={props.close} className="nav-over__link">Home</Link>
+    <Link to={baseUrl + 'shows'} onClick={props.close} className="nav-over__link">Shows</Link>
     <Link to="/" className="nav-over__link">Archive</Link>
     <Link to="/" className="nav-over__link">Shop</Link>
     <Link to="/" className="nav-over__link">Android App</Link>
