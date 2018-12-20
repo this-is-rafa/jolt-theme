@@ -22,6 +22,14 @@
 
 .schedules {
   margin-bottom: 40px;
+
+  &__day {
+    color: $white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 5px 10px 5px;
+    text-transform: uppercase;
+  }
 }
 
 .schedule {
@@ -29,6 +37,7 @@
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 40px;
+  table-layout: fixed;
   width: 100%;
 
   &__header {
@@ -45,10 +54,15 @@
   }
 
   &__col {
+    height: 28px;
+    overflow: hidden;
     padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &--time {
       font-weight: 700;
+      width: 70px;
     }
   }
 }

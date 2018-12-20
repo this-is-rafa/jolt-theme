@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from '../../../../components/UI/Button/Button';
 import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import TimeTable from './TimeTable/TimeTable';
 
@@ -57,15 +56,10 @@ class Schedule extends Component {
 
   render() {
     return(
-      <section className="schedule">
+      <section className="schedules">
         <div className="container">
-          <TitleBlock title="Upcoming Shows">
+          <TitleBlock title="Live Schedule">
             <TimeTable events={this.state.events} />
-            <div className="c-flex-pos c-flex-pos--right">
-              <Button>
-                More
-              </Button>
-            </div>
           </TitleBlock>
         </div>
       </section>
