@@ -39,7 +39,6 @@ class Banner extends Component {
         return response.json();
       })
       .then( function(results) {
-        console.log(results);
         let allImages = [];
         
         results.slideshow.forEach(function(single) {
