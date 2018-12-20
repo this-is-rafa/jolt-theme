@@ -118,8 +118,9 @@
   }
 
   &__content {
-    position: absolute;
     bottom: 15px;
+    max-width: 95%;
+    position: absolute;
 
     &--top {
       bottom: 40px;
@@ -141,9 +142,12 @@
 
   &__titles {
     background-color: $black-dark;
-    display: inline-block;
+    display: block;
+    overflow: hidden;
     padding: 5px 15px;
     text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &--main {
       font-size: 12px;

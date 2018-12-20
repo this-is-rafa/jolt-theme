@@ -6,12 +6,12 @@ class PostList extends Component {
   renderPosts() {
     return this.props.posts.map( (post, i) => {
       return(
-        <div className="col-md-4" key={i}>
+        <div className="col-md-6 col-lg-4" key={i}>
           <Card 
             title={post.title.rendered}
             link={this.props.baseUrl + post.slug}
             imgUrl={post['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['card']['source_url']}
-            subtitle="Time goes here"
+            subtitle={post.acf.schedule_text}
           />
         </div>
       );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
-import PostList from '../PostList/PostList';
+import PostList from '../../../../components/PostList/PostList';
 
 const JoltSettings = window.JoltSettings;
 
