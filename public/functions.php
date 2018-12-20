@@ -8,6 +8,10 @@ function jolt_theme_setup() {
     add_image_size( 'show-banner', 1120, 630, true );
 }
 
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
 function jolt_scripts() {
   wp_enqueue_script( 'jolt-script', get_stylesheet_directory_uri() . '/dist/app.js' , array(), '1.0', true );
 
@@ -19,6 +23,7 @@ function jolt_scripts() {
         'path' => $path,
         'URL' => array(
             'api' => esc_url_raw( get_rest_url( null, '/wp/v2' ) ),
+            'acf' => esc_url_raw( get_rest_url( null, '/acf/v3' ) ),
             'root' => esc_url_raw( $url ),
             'template' => esc_url_raw( get_stylesheet_directory_uri() )
           )
@@ -40,15 +45,6 @@ function jolt_register_fields() {
           'schema'            => null
       )
   );
-
-  // register_rest_field( 'cpt_artist',
-  // 'category_names',
-  //   array(
-  //       'get_callback'    => 'jolt_get_category_names',
-  //       'update_callback' => null,
-  //       'schema'          => null,
-  //   )
-  // );
 }
 add_action( 'rest_api_init', 'jolt_register_fields' );
 

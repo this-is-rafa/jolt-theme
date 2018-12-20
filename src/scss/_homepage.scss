@@ -6,6 +6,17 @@
   width: 100%;
   overflow: hidden;
 
+  &__img {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
   &__image {
     //background-image: url('../images/banner.jpg');
     background-size: cover;
