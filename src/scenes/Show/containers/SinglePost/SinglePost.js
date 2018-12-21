@@ -11,7 +11,7 @@ const singlePost = (props) => (
     <div className="container">
       <PostBanner 
         title={props.post.title.rendered}
-        subtitle={props.post.title.rendered}
+        subtitle={props.post.acf.schedule_text}
         image={props.post['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['show-banner']['source_url']} 
       />
       <div className="row">
