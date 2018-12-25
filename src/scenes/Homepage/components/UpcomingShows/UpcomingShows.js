@@ -33,7 +33,7 @@ class UpcomingShows extends Component {
     this.props.incrementLoad();
     let _this = this;
 
-    fetch(JoltSettings.URL.api + '/artists/?per_page=6&_embed')
+    fetch(JoltSettings.URL.api + '/jolt-upcoming/')
       .then( function(response) {
         if (!response.ok) {
           throw Error(response.statusText);
@@ -43,8 +43,13 @@ class UpcomingShows extends Component {
       .then( function(results) {
         let allPosts = [];
         
-        results.forEach(function(single) {
-          allPosts.push(single);
+        results.some(function(single) {
+          if ( !(typeof single.start_time === 'undefined' ) ) {
+            if ( _this.timeCheck(single) ) {
+              allPosts.push(single);           
+            }
+          }
+          return allPosts.length > 5;
         });
 
         _this.setState({posts: allPosts});
@@ -53,6 +58,17 @@ class UpcomingShows extends Component {
       .catch(function(error) {
         console.log('Could not fetch shows: ' + error.message);
       });
+  }
+
+  timeCheck(show) {
+    let now = new Date();
+    let showTime = new Date(show.start_time * 1000); //php unix timestamp
+
+    if ( showTime > now ) {
+      return true;
+    }
+
+    return false;
   }
 
   render() {
