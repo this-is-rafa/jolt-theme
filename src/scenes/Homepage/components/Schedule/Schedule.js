@@ -41,7 +41,6 @@ class Schedule extends Component {
       })
       .then( function(results) {
         let allEvents = [];
-        console.log(results);
         results.forEach(function(single) {
           allEvents.push(single);
         });
