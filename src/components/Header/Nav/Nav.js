@@ -12,7 +12,7 @@ const nav = (props) => (
     <Link to={baseUrl} className="nav__logo-link nav__logo-link--circle">
       <img className="nav__logo-img" alt="logo circle" 
         src={imageUrl + 'jolt-circle-logo.png'}
-        srcset={imageUrl + 'jolt-circle-logo.png, ' + 
+        srcSet={imageUrl + 'jolt-circle-logo.png, ' + 
                 imageUrl + 'jolt-circle-logo--2x.png 2x, ' +
                 imageUrl + 'jolt-circle-logo--3x.png 3x'}
       />
@@ -21,7 +21,7 @@ const nav = (props) => (
     <Link to={baseUrl} className="nav__logo-link nav__logo-link--text">
       <img className="nav__logo-img" alt="logo text" 
       src={imageUrl + 'jolt-text-logo.png'}
-      srcset={imageUrl + 'jolt-text-logo.png, ' +
+      srcSet={imageUrl + 'jolt-text-logo.png, ' +
               imageUrl + 'jolt-text-logo--2x.png 2x, ' +
               imageUrl + 'jolt-text-logo--3x.png 3x'}
       />
