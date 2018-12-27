@@ -5,6 +5,7 @@ const button = (props) => (
     className={props.classes ? 'btn ' + props.classes : 'btn'}
     onClick={props.clicked}
     aria-label={props.children}
+    disabled={props.disabled}
   >
       {props.children}
   </button> 
