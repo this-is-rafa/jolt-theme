@@ -84,7 +84,7 @@ class LiveTextBox extends Component {
     return (
       <div ref={this.liveTextBoxRef} className="play-bar__box play-bar__box--live-text">
         <span ref={this.liveTextRef} className="play-bar__scroller" style={spanStyle}>
-          Live Now: Empower Your Essence with Jill Rappaport 9-10pm
+          Live Now:
         </span>
       </div>
     )
