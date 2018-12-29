@@ -1,4 +1,27 @@
 .footer {
   background-color: $black-dark;
+  color: lighten($black, 20);
   min-height: 200px;
+  padding: 40px 0;
+
+  &__title {
+    font-size: .8em;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: .7em;
+    padding-right: 2rem;
+  }
+
+  &__link {
+    color: lighten($black, 40);
+    transition: .2s ease all;
+
+    &:hover,
+    &:active {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
 }
