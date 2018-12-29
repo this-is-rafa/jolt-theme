@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Slideshow from './Slideshow/Slideshow';
 
 const JoltSettings = window.JoltSettings;
 
@@ -45,7 +44,7 @@ class Banner extends Component {
           allImages.push(single);
         });
 
-        _this.setState({images: allImages});
+        _this.setState({images: allImages[Math.floor(Math.random()*allImages.length)]});
         _this.props.decrementLoad();
       })
       .catch(function(error) {
@@ -54,9 +53,16 @@ class Banner extends Component {
   }
 
   render() {
+    if (this.state.images.length === 0) {
+      return null;
+    };
+
+    let bannerStyle = {
+      backgroundImage: `url(${this.state.images.sizes['show-banner']})`
+    };
+
     return(
-      <section className="banner">
-        <Slideshow images={this.state.images} />
+      <section className="banner" style={bannerStyle}>
       </section>
     );
   }
