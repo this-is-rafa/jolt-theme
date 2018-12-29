@@ -6,6 +6,7 @@ import MenuButton from './MenuButton/MenuButton';
 const JoltSettings = window.JoltSettings;
 const imageUrl = JoltSettings.URL.template + '/images/';
 const baseUrl = JoltSettings.path;
+const urls = JoltSettings.URL;
 
 const nav = (props) => (
   <nav className="nav">
@@ -29,12 +30,12 @@ const nav = (props) => (
 
     <Link to={baseUrl} className="nav__link">Home</Link>
     <Link to={baseUrl + 'shows'} className="nav__link">Shows</Link>
-    <Link to='/' className="nav__link">Archive</Link>
-    <Link to='/' className="nav__link">Contact</Link>
-    <a href="http://facebook.com/joltradio" className="nav__link" target="_blank" rel="noopener noreferrer nofollow">
+    <a href={urls.mixcloud} className="nav__link" target="_blank" rel="noopener noreferrer">Archive</a>
+    <a href='#contact' className="nav__link">Contact</a>
+    <a href={urls.fb} className="nav__link" target="_blank" rel="noopener noreferrer nofollow">
       <Icon name="fb" parentClass="nav" />
     </a>
-    <a href="http://instagram.com/joltradio " className="nav__link nav__link--last" target="_blank" rel="noopener noreferrer nofollow">
+    <a href={urls.ig} className="nav__link nav__link--last" target="_blank" rel="noopener noreferrer nofollow">
       <Icon name="ig" parentClass="nav" />
     </a>
 

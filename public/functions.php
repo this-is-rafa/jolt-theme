@@ -18,6 +18,14 @@ function jolt_scripts() {
   $url = trailingslashit( home_url() );
   $path = trailingslashit( parse_url( $url, PHP_URL_PATH ) );
 
+  $ig_url = $fb_url = $android_url = $ios_url = $mix_url = '#';
+
+  if ( get_field('ios_url', 'option') ) $ios_url = get_field('ios_url', 'option');
+  if ( get_field('android_url', 'option') ) $android_url = get_field('android_url', 'option');
+  if ( get_field('mix_url', 'option') ) $mix_url = get_field('mix_url', 'option');
+  if ( get_field('ig_url', 'option') ) $ig_url = get_field('ig_url', 'option');
+  if ( get_field('fb_url', 'option') ) $fb_url = get_field('fb_url', 'option');
+
   wp_scripts()->add_data( 'jolt-script', 'data', sprintf( 'var JoltSettings = %s;', wp_json_encode( array(
         'title' => get_bloginfo( 'name', 'display' ),
         'path' => $path,
@@ -25,7 +33,12 @@ function jolt_scripts() {
             'api' => esc_url_raw( get_rest_url( null, '/wp/v2' ) ),
             'acf' => esc_url_raw( get_rest_url( null, '/acf/v3' ) ),
             'root' => esc_url_raw( $url ),
-            'template' => esc_url_raw( get_stylesheet_directory_uri() )
+            'template' => esc_url_raw( get_stylesheet_directory_uri() ),
+            'iosApp' => esc_url_raw( $ios_url ),
+            'androidApp' => esc_url_raw( $android_url ),
+            'mixcloud' => esc_url_raw( $mix_url ),
+            'ig' => esc_url_raw( $ig_url ),
+            'fb' => esc_url_raw( $fb_url )
           )
         ) 
       ) 

@@ -88,7 +88,7 @@
             </p>
           </div>
           <div class="col-md-3 offset-md-1">
-            <h5 class="footer__title">Contact</h5>
+            <h5 id="contact" class="footer__title">Contact</h5>
             <p class="footer__text">
               General Inquiries<br>
               <a class="footer__link" href="mailto:<?php the_field('general_email', 'option') ?>"><?php the_field('general_email', 'option') ?></a>
