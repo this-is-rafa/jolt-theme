@@ -43,7 +43,7 @@ const singlePost = (props) => {
     ogImage = {
       url: props.post.acf.banner_image.url,
       width: props.post.acf.banner_image.width,
-      height: props.postprops.post.acf.banner_image.height
+      height: props.post.acf.banner_image.height
     };
   }
   
