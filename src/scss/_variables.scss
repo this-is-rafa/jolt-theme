@@ -10,10 +10,13 @@ $breakpoints: (
 );
 
 $z-index: (
-  "hamburger": 15,
-  "nav-over": 10,
-  "header-circle-logo": 5,
-  "header": 5
+  "hamburger": 30,
+  "nav": 25,
+  "play-bar": 20,
+  "nav-over": 15,
+  "header-circle-logo": 10,
+  "header": 10,
+  "load-overlay": 5
 );
 
 $font-stack: 'Roboto', sans-serif;

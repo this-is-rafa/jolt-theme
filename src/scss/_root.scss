@@ -97,6 +97,8 @@ h6, .h6 {
   position: fixed;
   top: 0;
   transition: .2s ease opacity;
+  width: 100%;
+  z-index: z('load-overlay');
 
   &--active {
     height: 100%;

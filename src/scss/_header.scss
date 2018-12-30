@@ -19,8 +19,10 @@
   display: flex;
   justify-content: flex-end;
   height: 53px;
+  position: relative;
   top: 0;
   width: 100%;
+  z-index: z('nav');
 
   &__logo-link {
     position: absolute;
@@ -95,17 +97,24 @@
   background-color: $black-dark;
   bottom: 0;
   color: $black;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   left: 0;
   position: fixed;
   right: 0;
   top: 88px;
+  transform: translateY(-100%);
+  transition: background-color .36s cubic-bezier(0.32, 0.08, 0.24, 1),
+              transform .56s cubic-bezier(0.52, 0.16, 0.24, 1);
   z-index: z('nav-over');
 
   &--open {
-    display: flex;
+    transform: translateY(0);
+  }
+
+  @include mq('tablet-wide') {
+    display: none;
   }
 
   &__link {
@@ -176,6 +185,7 @@
   flex-direction: row;
   position: relative;
   width: 100%;
+  z-index: z('play-bar');
 
   &__box {
     align-items: center;
