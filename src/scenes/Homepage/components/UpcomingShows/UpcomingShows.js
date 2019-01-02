@@ -72,20 +72,24 @@ class UpcomingShows extends Component {
   }
 
   render() {
-    return(
-      <section className="posts">
-        <div className="container">
-          <TitleBlock title="Upcoming Shows">
-            <PostList posts={this.state.posts} baseUrl="artist/" />
-            <div className="c-flex-pos c-flex-pos--right">
-              <Link to="shows" className="btn">
-                All Shows
-              </Link>
-            </div>
-          </TitleBlock>
-        </div>
-      </section>
-    );
+    if ( this.state.posts.length > 0 ) {
+      return(
+        <section className="posts">
+          <div className="container">
+            <TitleBlock title="Upcoming Shows">
+              <PostList posts={this.state.posts} baseUrl="artist/" />
+              <div className="c-flex-pos c-flex-pos--right">
+                <Link to="shows" className="btn">
+                  All Shows
+                </Link>
+              </div>
+            </TitleBlock>
+          </div>
+        </section>
+      );  
+    } else {
+      return null;
+    }
   };
 
 }

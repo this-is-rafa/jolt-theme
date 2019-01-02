@@ -54,15 +54,19 @@ class Schedule extends Component {
   }
 
   render() {
-    return(
-      <section className="schedules">
-        <div className="container">
-          <TitleBlock title="Live Schedule">
-            <TimeTable events={this.state.events} />
-          </TitleBlock>
-        </div>
-      </section>
-    );
+    if ( this.state.events.length > 0 ) {
+      return(
+        <section className="schedules">
+          <div className="container">
+            <TitleBlock title="Live Schedule">
+              <TimeTable events={this.state.events} />
+            </TitleBlock>
+          </div>
+        </section>
+      ); 
+    } else {
+      return null;
+    }
   };
 
 }

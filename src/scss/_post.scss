@@ -1,4 +1,6 @@
 .post-content {
+  animation: .5s 1 fadeInComponent;
+  animation-timing-function: ease-in-out;
   background-color: shade($white, 10);
   color: $black;
   padding: 20px;
@@ -41,6 +43,8 @@
 }
 
 .post-banner {
+  animation: .5s 1 fadeInComponent;
+  animation-timing-function: ease-in-out;
   margin: 0 -15px 40px;
   position: relative;
 

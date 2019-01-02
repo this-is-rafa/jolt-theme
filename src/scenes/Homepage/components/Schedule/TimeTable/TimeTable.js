@@ -26,7 +26,7 @@ class TimeTable extends Component {
 
   renderDays() {
     return this.props.events.map( (day, i) => {
-      return(
+      return(    
         <div className="col-md-4" key={i}>
           <h6 className="schedules__day">{ day.date }</h6>
           <table className="schedule">
@@ -40,7 +40,7 @@ class TimeTable extends Component {
   }
 
   render() {
-    return(
+    return(  
       <div className="row no-gutters">
         { this.renderDays() }
       </div>

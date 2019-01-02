@@ -32,6 +32,8 @@ h6, .h6 {
 }
 
 .c-bg-wrap {
+  animation: .5s 1 fadeInComponent;
+  animation-timing-function: ease-in-out;
   background-color: $black-dark;
   padding: 15px;
   margin: 0 -15px;
@@ -47,6 +49,15 @@ h6, .h6 {
   &--right {
     flex-direction: row;
     justify-content: flex-end;
+  }
+}
+
+@keyframes fadeInComponent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
