@@ -1,5 +1,9 @@
 <?php 
 require_once 'inc/post_types.php';
+
+// Remove WP emoji stuff
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 	
 add_theme_support( 'post-thumbnails' );
 add_action( 'after_setup_theme', 'jolt_theme_setup' );
