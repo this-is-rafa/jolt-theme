@@ -23,6 +23,7 @@
     <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico?" type="image/x-icon">
     <title><?php wp_title() ?></title>
+    <style>body{background-color: #111; color: #111;}a{color:#111}</style>
     <?php wp_head(); ?>
   </head>
   <body>
