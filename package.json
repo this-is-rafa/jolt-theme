@@ -30,8 +30,10 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "homepage": "/wordpress/wp-content/themes/jolt",
-    "browserLaunchTo": "http://localhost:8080/wordpress",
+    "homepageDev": "/wordpress/wp-content/themes/jolt",
+    "browserLaunchToDev": "http://localhost:8080/wordpress",
+    "homepage": "/wp-content/themes/jolt",
+    "browserLaunchTo": "http://test321.joltradio.org/",
     "devDependencies": {
         "node-sass": "^4.10.0",
         "svg-sprite-loader": "^4.1.3"
