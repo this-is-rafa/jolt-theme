@@ -1,5 +1,6 @@
 <?php
   $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
+  $title = is_front_page() ? get_bloginfo('name') : get_the_title() . ' | ' . get_bloginfo('name');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,22 +8,35 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="<?php wp_title() ?>" />
-    <meta name="twitter:title" content="<?php wp_title() ?>" />
+    <meta property="og:title" content="<?php echo $title; ?>" />
+    <meta name="twitter:title" content="<?php echo $title; ?>" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="<?php bloginfo('url') ?>" />
-    <meta property="og:site_name" content="<?php wp_title() ?>" />
+    <meta property="og:site_name" content="<?php echo $title; ?>" />
     <meta property="og:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
     <meta property="og:image:height" content="1920" />
     <meta property="og:image:width" content="1080" />
-    <meta property="og:description" content="Jolt is an online radio station based in Miami. Supporting local, national, and international independent artists and producers." />
+    <?php if ( is_front_page() ) : ?>
+      <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>">
+      <meta property="og:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
+      <meta property="og:image:height" content="1920" />
+      <meta property="og:image:width" content="1080" />
+    <?php else : 
+      $page_id = get_queried_object_id(); 
+      $thumbnail_url = get_the_post_thumbnail_url($page_id, 'large')
+      ?>
+        <meta property="og:image" content="<?php echo $thumbnail_url ?>" />
+        <meta property="og:image:height" content="700" />
+        <meta property="og:image:width" content="700" />
+        <meta property="og:description" content="<?php echo wp_strip_all_tags( get_the_excerpt($page_id), true ); ?>">
+        <meta property="twitter:description" content="<?php echo wp_strip_all_tags( get_the_excerpt($page_id), true ); ?>">
+        <meta name="twitter:image" content="<?php echo $thumbnail_url ?>" />
+    <?php endif; //is_front_page ?>
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
     <meta name="twitter:site" content="@joltradio" />
-    <meta name="twitter:description" content="Jolt is an online radio station based in Miami. Supporting local, national, and international independent artists and producers." />
     <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico?" type="image/x-icon">
-    <title><?php wp_title() ?></title>
+    <title><?php echo $title; ?></title>
     <style>body{background-color: #111; color: #111;}a{color:#111}</style>
     <?php wp_head(); ?>
   </head>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import TitleBlock from '../../components/TitleBlock/TitleBlock';
 import PostList from '../../components/PostList/PostList';
 
@@ -86,6 +87,9 @@ class CatList extends Component {
   render() {
     return(
       <div className="container">
+        <Helmet>
+          <title>{this.state.catName} | {JoltSettings.title}</title>
+        </Helmet>
         <TitleBlock title={this.state.catName} >
           <PostList posts={this.state.posts} baseUrl={baseUrl} />
         </TitleBlock>
