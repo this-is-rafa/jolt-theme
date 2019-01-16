@@ -89,6 +89,17 @@
       width: 70px;
     }
   }
+
+  &__link {
+    color: $white;
+
+    &:hover,
+    &:visited,
+    &:active {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
 }
 
 .posts {

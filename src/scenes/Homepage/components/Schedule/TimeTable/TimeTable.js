@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class TimeTable extends Component {
 
@@ -11,13 +12,18 @@ class TimeTable extends Component {
       }
     }
     return events.map( (event, i) => {
+      let title = event.title;
+      if (event.slug !== undefined) {
+        title = <Link to={'artists/' + event.slug} className="schedule__link">{event.title}</Link>
+      };
+
       return(
         <tr className="schedule__row" key={i}>
           <td className="schedule__col schedule__col--time">
             {event.startTime}
           </td>
           <td className="schedule__col">
-            {event.title}
+            {title}
           </td>
         </tr>
       );
