@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-//import { findDOMNode } from 'react-dom';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state) {
+  return {
+    events: state.events
+  }
+}
 
 class LiveTextBox extends Component {
 
@@ -76,19 +82,37 @@ class LiveTextBox extends Component {
     }
   }
 
+  getCurrentEvent = (events) => {
+    let now = new Date();
+    for (let event of events[0].events) {
+      let showTime = new Date(event.timeStamp * 1000); //convert from php unix time
+      let showEnd = new Date( (event.timeStamp + 3600) * 1000 );
+      if ( now >= showTime && now <= showEnd) {
+        console.log('hit');
+        return event.title;
+      }
+    };
+  }
+
   render() {
     const spanStyle = {
       textIndent: this.state.textIndent
     }
 
+    let liveNow = '';
+
+    if ( this.props.events[0] ) {
+      liveNow = this.getCurrentEvent(this.props.events) || 'Jolt Rotation';
+    }
+
     return (
       <div ref={this.liveTextBoxRef} className="play-bar__box play-bar__box--live-text">
         <span ref={this.liveTextRef} className="play-bar__scroller" style={spanStyle}>
-          Live Now:
+          Live Now: {liveNow}
         </span>
       </div>
     )
   }
 };
 
-export default LiveTextBox;
+export default connect(mapStateToProps, null)(LiveTextBox);

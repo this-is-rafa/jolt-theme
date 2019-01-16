@@ -1,65 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actionCreators from '../../../../actions/actions';
 import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import TimeTable from './TimeTable/TimeTable';
 
-const JoltSettings = window.JoltSettings;
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     incrementLoad: () => {
+//       const action = {type: 'LOAD'};
+//       dispatch(action);
+//     },
+//     decrementLoad: () => {
+//       const action = {type: 'UNLOAD'};
+//       dispatch(action);
+//     }
+//   }
+// }
 
-const mapDispatchToProps = (dispatch) => {
+function mapStateToProps(state) {
   return {
-    incrementLoad: () => {
-      const action = {type: 'LOAD'};
-      dispatch(action);
-    },
-    decrementLoad: () => {
-      const action = {type: 'UNLOAD'};
-      dispatch(action);
-    }
+    events: state.events
   }
 }
 
 class Schedule extends Component {
 
-  state = {
-    events: []
-  };
-
-  componentDidMount() {
-    this.getEvents();
-  }
-
-  getEvents() {
-    this.props.incrementLoad();
-    let _this = this;
-
-    fetch(JoltSettings.URL.api + '/jolt-cal')
-      .then( function(response) {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-        return response.json();
-      })
-      .then( function(results) {
-        let allEvents = [];
-        results.forEach(function(single) {
-          allEvents.push(single);
-        });
-
-        _this.setState({events: results});
-        _this.props.decrementLoad();
-      })
-      .catch(function(error) {
-        console.log('Could not fetch events: ' + error.message);
-      });
-  }
-
   render() {
-    if ( this.state.events.length > 0 ) {
+    console.log(this.props);
+    if ( this.props.events.length > 0 ) {
       return(
         <section className="schedules">
           <div className="container">
             <TitleBlock title="Live Schedule">
-              <TimeTable events={this.state.events} />
+              <TimeTable events={this.props.events} />
             </TitleBlock>
           </div>
         </section>
@@ -71,4 +44,4 @@ class Schedule extends Component {
 
 }
 
-export default connect(null, mapDispatchToProps)(Schedule);
+export default connect(mapStateToProps, actionCreators)(Schedule);
