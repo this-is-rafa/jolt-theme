@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionCreators from '../../../../actions/actions';
 import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import TimeTable from './TimeTable/TimeTable';
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     incrementLoad: () => {
-//       const action = {type: 'LOAD'};
-//       dispatch(action);
-//     },
-//     decrementLoad: () => {
-//       const action = {type: 'UNLOAD'};
-//       dispatch(action);
-//     }
-//   }
-// }
 
 function mapStateToProps(state) {
   return {
@@ -44,4 +30,4 @@ class Schedule extends Component {
 
 }
 
-export default connect(mapStateToProps, actionCreators)(Schedule);
+export default connect(mapStateToProps, null)(Schedule);
