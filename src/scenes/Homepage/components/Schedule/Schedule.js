@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
 import TimeTable from './TimeTable/TimeTable';
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     events: state.events
   }
@@ -12,7 +12,6 @@ function mapStateToProps(state) {
 class Schedule extends Component {
 
   render() {
-    console.log(this.props);
     if ( this.props.events.length > 0 ) {
       return(
         <section className="schedules">
