@@ -1,6 +1,6 @@
 const JoltSettings = window.JoltSettings;
 
-export function getEvents() {
+export const getEvents = () => {
   return(dispatch) => {
     fetch(JoltSettings.URL.api + '/jolt-cal')
       .then( function(response) {
@@ -16,6 +16,7 @@ export function getEvents() {
         });
 
         dispatch(setEvents(allEvents));
+        dispatch(setCurrentShow(allEvents));
       })
       .catch(function(error) {
         console.log('Could not fetch events: ' + error.message);
@@ -23,9 +24,32 @@ export function getEvents() {
   }
 }
 
-export function setEvents(events) {
+export const setEvents = (events) => {
   return {
     type: 'SET_EVENTS',
     events: events
   }
+}
+
+export const setCurrentShow = (events) => {
+  if (events.length > 0) {
+    let now = new Date();
+    for (let event of events[0].events) {
+      let showTime = new Date(event.timeStamp * 1000); //convert from php unix time
+      let showEnd = new Date( (event.timeStamp + 3600) * 1000 );
+      
+      if (now >= showTime && now <= showEnd) {
+        return {
+          type: 'SET_CURRENT_SHOW',
+          currentShow: event.title
+        }
+      }
+    }
+  }
+
+  return {
+    type: 'SET_CURRENT_SHOW',
+    currentShow: 'Jolt Rotation'
+  }
+
 }

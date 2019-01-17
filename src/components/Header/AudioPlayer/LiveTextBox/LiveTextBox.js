@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setCurrentShow } from '../../../../actions/actions';
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
-    events: state.events
+    events: state.events,
+    currentShow: state.currentShow
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentShow: (events) => {
+      dispatch(setCurrentShow(events));
+    }
   }
 }
 
@@ -19,6 +29,10 @@ class LiveTextBox extends Component {
   componentDidMount() {
     setTimeout(this.scrollTextHandler, 1000);
     window.addEventListener('resize', this.resetScroll.bind(this));
+    window.setInterval( () => {
+      console.log('fire', new Date().toLocaleString());
+      this.props.setCurrentShow(this.props.events) 
+    }, 180000);
   }
 
   componentWillUnmount() {
@@ -82,37 +96,19 @@ class LiveTextBox extends Component {
     }
   }
 
-  getCurrentEvent = (events) => {
-    let now = new Date();
-    for (let event of events[0].events) {
-      let showTime = new Date(event.timeStamp * 1000); //convert from php unix time
-      let showEnd = new Date( (event.timeStamp + 3600) * 1000 );
-      if ( now >= showTime && now <= showEnd) {
-        console.log('hit');
-        return event.title;
-      }
-    };
-  }
-
   render() {
     const spanStyle = {
       textIndent: this.state.textIndent
     }
 
-    let liveNow = '';
-
-    if ( this.props.events[0] ) {
-      liveNow = this.getCurrentEvent(this.props.events) || 'Jolt Rotation';
-    }
-
     return (
       <div ref={this.liveTextBoxRef} className="play-bar__box play-bar__box--live-text">
         <span ref={this.liveTextRef} className="play-bar__scroller" style={spanStyle}>
-          Live Now: {liveNow}
+          Live Now: {this.props.currentShow}
         </span>
       </div>
     )
   }
 };
 
-export default connect(mapStateToProps, null)(LiveTextBox);
+export default connect(mapStateToProps, mapDispatchToProps)(LiveTextBox);
