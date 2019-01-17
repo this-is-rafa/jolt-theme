@@ -4,7 +4,9 @@ import thunk from 'redux-thunk';
 const initialState = {
   loading: 0,
   events: [],
-  currentShow: ''
+  currentShow: {
+    title: "Jolt Rotation"
+  }
 }
 
 const reducer = (state = initialState, action) => {

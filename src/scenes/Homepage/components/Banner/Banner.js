@@ -16,6 +16,12 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    currentShow: state.currentShow
+  }
+}
+
 class Banner extends Component {
 
   state = {
@@ -61,6 +67,12 @@ class Banner extends Component {
       backgroundImage: `url(${this.state.images.sizes['show-banner']})`
     };
 
+    if (this.props.currentShow.banner_image !== undefined) {
+      bannerStyle = {
+        backgroundImage: `url(${this.props.currentShow.banner_image.url})`
+      }
+    }
+
     return(
       <section className="banner" style={bannerStyle}>
       </section>
@@ -68,4 +80,4 @@ class Banner extends Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Banner);
+export default connect(mapStateToProps, mapDispatchToProps)(Banner);

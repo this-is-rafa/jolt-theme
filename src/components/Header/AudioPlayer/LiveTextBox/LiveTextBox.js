@@ -5,7 +5,7 @@ import { setCurrentShow } from '../../../../actions/actions';
 const mapStateToProps = (state) => {
   return {
     events: state.events,
-    currentShow: state.currentShow
+    currentShow: state.currentShow.title
   }
 }
 
@@ -30,7 +30,6 @@ class LiveTextBox extends Component {
     setTimeout(this.scrollTextHandler, 1000);
     window.addEventListener('resize', this.resetScroll.bind(this));
     window.setInterval( () => {
-      console.log('fire', new Date().toLocaleString());
       this.props.setCurrentShow(this.props.events) 
     }, 180000);
   }

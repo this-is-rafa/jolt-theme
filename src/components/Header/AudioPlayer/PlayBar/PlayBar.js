@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Icon from '../../../UI/Icon/Icon';
 import LiveTextBox from '../LiveTextBox/LiveTextBox';
-//import AudioElement from '../AudioElement/AudioElement';
-
 
 class PlayBar extends Component {
 

@@ -41,7 +41,11 @@ export const setCurrentShow = (events) => {
       if (now >= showTime && now <= showEnd) {
         return {
           type: 'SET_CURRENT_SHOW',
-          currentShow: event.title
+          currentShow: {
+            title: event.title,
+            timeStamp: event.timeStamp || 0,
+            post_id: event.post_id || 0
+          }
         }
       }
     }
@@ -49,7 +53,9 @@ export const setCurrentShow = (events) => {
 
   return {
     type: 'SET_CURRENT_SHOW',
-    currentShow: 'Jolt Rotation'
+    currentShow: {
+      title: 'Jolt Rotation'
+    }
   }
 
 }
