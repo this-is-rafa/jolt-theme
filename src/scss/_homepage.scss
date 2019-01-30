@@ -91,12 +91,12 @@
   }
 
   &__link {
-    color: $white;
+    color: $primary;
 
     &:hover,
     &:visited,
     &:active {
-      color: $primary;
+      color: $white;
       text-decoration: none;
     }
   }
