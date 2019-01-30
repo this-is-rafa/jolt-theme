@@ -39,7 +39,8 @@
       display: none;
       left: 6.7em;
       width: 129px;
-
+      top: .8em;
+      
       @include mq('tablet-wide') {
         display: block;
       }
