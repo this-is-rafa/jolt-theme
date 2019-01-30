@@ -14,7 +14,7 @@ class TimeTable extends Component {
     return events.map( (event, i) => {
       let title = event.title;
       if (event.slug !== undefined) {
-        title = <Link to={'artists/' + event.slug} className="schedule__link">{event.title}</Link>
+        title = <Link to={'artist/' + event.slug} className="schedule__link">{event.title}</Link>
       };
 
       return(
