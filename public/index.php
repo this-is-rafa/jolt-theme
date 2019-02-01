@@ -13,24 +13,32 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="<?php bloginfo('url') ?>" />
     <meta property="og:site_name" content="<?php echo $title; ?>" />
-    <meta property="og:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
-    <meta property="og:image:height" content="1920" />
-    <meta property="og:image:width" content="1080" />
     <?php if ( is_front_page() ) : ?>
       <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>">
       <meta property="og:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
-      <meta property="og:image:height" content="1920" />
-      <meta property="og:image:width" content="1080" />
+      <meta property="og:image:width" content="1920" />
+      <meta property="og:image:height" content="1080" />
     <?php else : 
-      $page_id = get_queried_object_id(); 
-      $thumbnail_url = get_the_post_thumbnail_url($page_id, 'large')
-      ?>
-        <meta property="og:image" content="<?php echo $thumbnail_url ?>" />
-        <meta property="og:image:height" content="700" />
-        <meta property="og:image:width" content="700" />
-        <meta property="og:description" content="<?php echo wp_strip_all_tags( get_the_excerpt($page_id), true ); ?>">
-        <meta property="twitter:description" content="<?php echo wp_strip_all_tags( get_the_excerpt($page_id), true ); ?>">
-        <meta name="twitter:image" content="<?php echo $thumbnail_url ?>" />
+      $post_id = get_queried_object_id();
+      $post = get_post($post_id);
+      $content = wp_strip_all_tags($post->post_content);
+      $thumbnail_url = get_the_post_thumbnail_url($post_id, 'large');
+      $width = '700';
+      $height = '700';
+
+      if ( get_field('banner_image', $post_id) ) : 
+        $banner_image = get_field('banner_image', $post_id);
+        $width = $banner_image['sizes']['show-banner-width'];
+        $height = $banner_image['sizes']['show-banner-height'];
+        $thumbnail_url = $banner_image['sizes']['show-banner']; 
+      endif;
+    ?>
+      <meta property="og:image" content="<?php echo $thumbnail_url ?>" />
+      <meta property="og:image:width" content="<?php echo $width ?>" />
+      <meta property="og:image:height" content="<?php echo $height ?>" />
+      <meta property="og:description" content="<?php echo $content ?>">
+      <meta property="twitter:description" content="<?php echo $content ?>">
+      <meta name="twitter:image" content="<?php echo $thumbnail_url ?>" />
     <?php endif; //is_front_page ?>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@joltradio" />
