@@ -4,12 +4,14 @@
     "private": true,
     "dependencies": {
         "@devloco/react-scripts-wptheme": "^2.1.1-wptheme-2.1.4",
+        "@wordpress/html-entities": "^2.0.4",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
         "react-helmet": "^5.2.0",
         "react-redux": "^5.1.1",
         "react-router-dom": "^4.3.1",
-        "redux": "^4.0.1"
+        "redux": "^4.0.1",
+        "redux-thunk": "^2.3.0"
     },
     "scripts": {
         "crabuild": "react-scripts build",
@@ -30,10 +32,10 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "homepageDev": "/wordpress/wp-content/themes/jolt",
-    "browserLaunchToDev": "http://localhost:8080/wordpress",
-    "homepage": "/wp-content/themes/jolt",
-    "browserLaunchTo": "http://test321.joltradio.org/",
+    "homepage": "/wordpress/wp-content/themes/jolt",
+    "browserLaunchTo": "http://localhost:8080/wordpress",
+    "homepageDev": "/wp-content/themes/jolt",
+    "browserLaunchToDev": "http://test321.joltradio.org/",
     "devDependencies": {
         "node-sass": "^4.10.0",
         "svg-sprite-loader": "^4.1.3"
