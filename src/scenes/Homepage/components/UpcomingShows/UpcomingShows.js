@@ -44,7 +44,7 @@ class UpcomingShows extends Component {
         let allPosts = [];
         
         results.some(function(single) {
-          if ( !(typeof single.start_time === 'undefined' ) ) {
+          if ( !(typeof single.start_timestamp === 'undefined' ) ) {
             if ( _this.timeCheck(single) ) {
               allPosts.push(single);           
             }
@@ -62,7 +62,7 @@ class UpcomingShows extends Component {
 
   timeCheck(show) {
     let now = new Date();
-    let showTime = new Date(show.start_time * 1000); //php unix timestamp
+    let showTime = new Date(show.start_timestamp);
 
     if ( showTime > now ) {
       return true;

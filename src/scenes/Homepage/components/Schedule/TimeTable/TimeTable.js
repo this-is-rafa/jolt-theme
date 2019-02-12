@@ -8,7 +8,7 @@ class TimeTable extends Component {
     if (count < 7) {
       //Pad the table to look better
       for (let i = 0; i < (7 - count); i++) {
-        events.push({title: ' ', startTime: ' '});
+        events.push({title: ' ', start_time_text: ' '});
       }
     }
     return events.map( (event, i) => {
@@ -20,7 +20,7 @@ class TimeTable extends Component {
       return(
         <tr className="schedule__row" key={i}>
           <td className="schedule__col schedule__col--time">
-            {event.startTime}
+            {event.start_time_text}
           </td>
           <td className="schedule__col">
             {title}

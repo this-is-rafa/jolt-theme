@@ -35,15 +35,15 @@ export const setCurrentShow = (events) => {
   if (events.length > 0) {
     let now = new Date();
     for (let event of events[0].events) {
-      let showTime = new Date(event.timeStamp * 1000); //convert from php unix time
-      let showEnd = new Date( (event.timeStamp + 3600) * 1000 );
+      let showTime = new Date(event.start_timestamp);
+      let showEnd = new Date( event.end_timestamp );
       
       if (now >= showTime && now <= showEnd) {
         return {
           type: 'SET_CURRENT_SHOW',
           currentShow: {
             title: event.title,
-            timeStamp: event.timeStamp || 0,
+            timeStamp: event.start_timestamp || 0,
             postId: event.post_id || 0,
             bannerImage: event.bannerImage || undefined
           }
