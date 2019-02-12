@@ -44,7 +44,8 @@ export const setCurrentShow = (events) => {
           currentShow: {
             title: event.title,
             timeStamp: event.timeStamp || 0,
-            post_id: event.post_id || 0
+            postId: event.post_id || 0,
+            bannerImage: event.bannerImage || undefined
           }
         }
       }
@@ -54,7 +55,7 @@ export const setCurrentShow = (events) => {
   return {
     type: 'SET_CURRENT_SHOW',
     currentShow: {
-      title: 'Jolt Rotation'
+      title: 'Jolt Mix'
     }
   }
 

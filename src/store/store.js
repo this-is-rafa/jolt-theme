@@ -5,7 +5,7 @@ const initialState = {
   loading: 0,
   events: [],
   currentShow: {
-    title: "Jolt Rotation"
+    title: "Jolt Mix"
   }
 }
 
