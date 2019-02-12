@@ -4,6 +4,7 @@ import PostBanner from '../../components/PostBanner/PostBanner';
 import PostContent from '../../components/PostContent/PostContent';
 import FeaturedImage from '../../components/FeaturedImage/FeaturedImage';
 import Categories from '../../components/Categories/Categories';
+import { decodeEntities } from '@wordpress/html-entities';
 
 const JoltSettings = window.JoltSettings;
 
@@ -26,16 +27,18 @@ const singlePost = (props) => {
   if (typeof props.post.acf.banner_image !== 'undefined' && props.post.acf.banner_image !== false){
     showImage = props.post.acf.banner_image.sizes['show-banner'];
   }
+  
+  const title = decodeEntities(props.post.title.rendered);
 
   return (
     <section className="single-post">
       <Helmet>
-        <title>{props.post.title.rendered} | {JoltSettings.title}</title>
+        <title>{title} | {JoltSettings.title}</title>
       </Helmet>
 
       <div className="container">
         <PostBanner 
-          title={props.post.title.rendered}
+          title={title}
           subtitle={props.post.acf.schedule_text}
           image={showImage} 
         />
@@ -45,7 +48,7 @@ const singlePost = (props) => {
           </div>
           <div className="col-md-4">
             <FeaturedImage 
-              title={props.post.title.rendered}
+              title={title}
               image={featuredImage} />
             { showCats ? <Categories categories={showCats} baseUrl={JoltSettings.path + 'artist-category/'} /> : '' }
           </div>

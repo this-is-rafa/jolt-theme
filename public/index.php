@@ -1,6 +1,7 @@
 <?php
   $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
   $title = is_front_page() ? get_bloginfo('name') : get_the_title() . ' | ' . get_bloginfo('name');
+  $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
 ?>
 <!DOCTYPE html>
 <html lang="en">
