@@ -25,7 +25,6 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    console.log('[Show] did Mount');
     this.getShow();
   }
 
@@ -35,8 +34,6 @@ class Show extends Component {
     let _this = this;
     let url = window.location.href.split('/');
     let slug = url.pop() || url.pop();
-
-    console.log(JoltSettings.URL.api + '/artists?slug=' + slug + '&_embed');
 
     fetch(JoltSettings.URL.api + '/artists?slug=' + slug + '&_embed')
       .then( function(response) {
