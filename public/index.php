@@ -12,18 +12,21 @@
     <meta property="og:title" content="<?php echo $title; ?>" />
     <meta name="twitter:title" content="<?php echo $title; ?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="<?php bloginfo('url') ?>" />
     <meta property="og:site_name" content="<?php echo $title; ?>" />
     <?php if ( is_front_page() ) : ?>
-      <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>">
+      <meta property="og:description" content="<?php bloginfo('description'); ?>">
       <meta property="og:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
+      <meta property="og:url" content="<?php bloginfo('url') ?>" />
+      <meta name="description" content="<?php bloginfo('description'); ?>">
+      <meta name="keywords" content="online radio, miami, local, eclectic, rock, house, indie, internet radio, world, music, vinyl, jolt, electronic, techno, dancehall, ambient, disco, hip hop, rap, independent">
     <?php else : 
       $post_id = get_queried_object_id();
       $post = get_post($post_id);
-      $content = wp_strip_all_tags($post->post_content);
+      $content = jolt_truncate( htmlspecialchars( wp_strip_all_tags($post->post_content) ) );
       $thumbnail_url = get_the_post_thumbnail_url($post_id, 'large');
+      $permalink = get_permalink($post);
       $width = '700';
       $height = '700';
 
@@ -34,12 +37,15 @@
         $thumbnail_url = $banner_image['sizes']['show-banner']; 
       endif;
     ?>
+      <meta property="og:url" content=<?php echo $permalink ?> />
       <meta property="og:image" content="<?php echo $thumbnail_url ?>" />
       <meta property="og:image:width" content="<?php echo $width ?>" />
       <meta property="og:image:height" content="<?php echo $height ?>" />
       <meta property="og:description" content="<?php echo $content ?>">
       <meta property="twitter:description" content="<?php echo $content ?>">
       <meta name="twitter:image" content="<?php echo $thumbnail_url ?>" />
+      <meta name="description" content="<?php echo $content ?>">
+      <meta name="keywords" content="online radio, miami, local, eclectic, rock, house, indie, internet radio, world, music, vinyl, jolt, electronic, techno, dancehall, ambient, disco, hip hop, rap, independent">
     <?php endif; //is_front_page ?>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@joltradio" />
