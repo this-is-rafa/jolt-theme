@@ -45,7 +45,7 @@ export const setCurrentShow = (events) => {
             title: event.title,
             timeStamp: event.start_timestamp || 0,
             postId: event.post_id || 0,
-            bannerImage: event.bannerImage || undefined
+            bannerImage: event.banner_image || undefined
           }
         }
       }

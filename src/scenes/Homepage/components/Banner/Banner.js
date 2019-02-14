@@ -66,7 +66,7 @@ class Banner extends Component {
     let bannerStyle = {
       backgroundImage: `url(${this.state.images.sizes['show-banner']})`
     };
-
+    
     if (this.props.currentShow.bannerImage !== undefined) {
       bannerStyle = {
         backgroundImage: `url(${this.props.currentShow.bannerImage})`
