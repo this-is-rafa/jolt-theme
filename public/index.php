@@ -57,7 +57,7 @@
   </head>
   <body>
     <noscript>
-        You need to enable JavaScript to run this app.
+      <div style="background-color:#fff">Jolt Radio relies on javascript for its audio player, and pretty much everything else.<br><br><a href="http://198.27.80.205:5220/stream/&amp;amp;type=m3u">Link to Audio</a></div>
     </noscript>
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
       <symbol id="icon-play" viewBox="0 0 50 50">
