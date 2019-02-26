@@ -12,7 +12,18 @@ class PlayBar extends Component {
   audioUrl = 'http://198.27.80.205:5220/stream/&amp;amp;type=m3u';
 
   componentDidMount() {
+    this.initialVolume();
     this.volumeRange.addEventListener('change', this.setVolume);
+  }
+
+  initialVolume = () => {
+    const volume = Number( localStorage.getItem('apVolume') ) || 100;
+    if ( volume < 1 ) {
+      this.volumeRange.value = 100;
+    } else {
+      this.volumeRange.value = volume;
+    }
+    this.setVolume();
   }
 
   setVolume = () => {
