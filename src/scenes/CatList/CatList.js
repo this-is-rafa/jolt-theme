@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import TitleBlock from '../../components/TitleBlock/TitleBlock';
 import PostList from '../../components/PostList/PostList';
+import { decodeEntities } from '@wordpress/html-entities';
 
 const JoltSettings = window.JoltSettings;
 const baseUrl = JoltSettings.path + 'artist/';
@@ -85,12 +86,14 @@ class CatList extends Component {
   }
 
   render() {
+    const catName = decodeEntities(this.state.catName);
+
     return(
       <div className="container">
         <Helmet>
-          <title>{this.state.catName} | {JoltSettings.title}</title>
+          <title>{catName} | {JoltSettings.title}</title>
         </Helmet>
-        <TitleBlock title={this.state.catName} >
+        <TitleBlock title={catName} >
           <PostList posts={this.state.posts} baseUrl={baseUrl} />
         </TitleBlock>
       </div>
