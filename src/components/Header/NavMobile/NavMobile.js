@@ -10,7 +10,6 @@ const NavMobile = (props) => (
     <Link to={baseUrl} onClick={props.close} className="nav-over__link">Home</Link>
     <Link to={baseUrl + 'shows'} onClick={props.close} className="nav-over__link">Shows</Link>
     <a href={urls.mixcloud} className="nav-over__link" target="_blank" rel="noopener noreferrer">Archive</a>
-    <a href={urls.androidApp} className="nav-over__link" target="_blank" rel="noopener noreferrer">Android App</a>
     <a href={urls.iosApp} className="nav-over__link" target="_blank" rel="noopener noreferrer">iOS App</a>
     <a href={urls.ig} className="nav-over__link" target="_blank" rel="noopener noreferrer">Instagram</a>
     <a href={urls.fb} className="nav-over__link" target="_blank" rel="noopener noreferrer">Facebook</a>
