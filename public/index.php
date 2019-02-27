@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="<?php echo $title; ?>" />
     <?php if ( is_front_page() ) : ?>
       <meta property="og:description" content="<?php bloginfo('description'); ?>">
-      <meta property="og:image" content="<?php echo $TEMPLATE_PATH; ?>/screenshot.png" />
+      <meta property="og:image" content="<?php bloginfo('template_url') ?>/screenshot.png" />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
       <meta property="og:url" content="<?php bloginfo('url') ?>" />
