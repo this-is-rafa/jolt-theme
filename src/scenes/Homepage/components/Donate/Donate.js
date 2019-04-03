@@ -8,10 +8,10 @@ const imageUrl = JoltSettings.URL.template + "/images/";
 
 class Donate extends Component {
   state = {
-    donateBtn: "",
-    donateLink: "",
-    donateText: "",
-    donateTitle: ""
+    donateBtn: undefined,
+    donateLink: undefined,
+    donateText: undefined,
+    donateTitle: undefined
   };
 
   componentDidMount() {
@@ -25,6 +25,7 @@ class Donate extends Component {
     fetch(JoltSettings.URL.acf + "/options/options/donate/")
       .then(function(response) {
         if (!response.ok) {
+          _this.props.decrementLoad();
           throw Error(response.statusText);
         }
         return response.json();
@@ -39,12 +40,13 @@ class Donate extends Component {
         _this.props.decrementLoad();
       })
       .catch(function(error) {
+        _this.props.decrementLoad();
         console.log("Could not fetch shows: " + error.message);
       });
   }
 
   render() {
-    if (this.state.donateTitle.length > 0) {
+    if (this.state.donateTitle !== undefined) {
       return (
         <section className="schedules">
           <div className="container">
