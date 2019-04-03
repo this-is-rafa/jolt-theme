@@ -6,6 +6,16 @@ const initialState = {
   events: [],
   currentShow: {
     title: "Jolt Mix"
+  },
+  search: {
+    query: "",
+    results: [],
+    searching: false 
+  },
+  postList: {
+    posts: [],
+    page: 1,
+    getPosts: true
   }
 }
 
@@ -24,6 +34,35 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         currentShow: action.currentShow
+      }
+    case 'SET_SEARCH_RESULTS':
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          results: action.searchResults
+        }
+      }
+    case 'SET_SEARCH_QUERY': 
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          query: action.searchQuery
+        }
+      }
+    case 'SET_SEARCH_STATUS': 
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          searching: action.searchStatus
+        }
+      }
+    case 'SET_POSTLIST':
+      return {
+        ...state,
+        postList: action.postList
       }
     default:
       return state;

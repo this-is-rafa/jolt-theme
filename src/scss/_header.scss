@@ -85,10 +85,99 @@
   &__icon {
     width: 18px;
     height: 18px;
-    //fill: $white;
+  }
+}
 
-    &:hover {
-      //fill: $primary;
+.nav-search {
+  display: none;
+  padding-right: 1.3em;
+  position: relative;
+
+  @include mq(tablet-wide) {
+    display: inline-block;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    fill: $white;
+
+    &:focus {
+      fill: $white;
+    }
+
+    &:hover,
+    &:active {
+      fill: $primary;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__form {
+    display: inline-block;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    caret-color: $primary;
+    color: $white;
+    overflow: hidden;
+    transition: .3s ease width;
+    width: 0;
+
+    &--active:focus {
+      border-bottom: 1px solid $white;
+      outline: 0;
+      width: 200px;
+
+      & + .nav-search-results {
+        display: block;
+      }
+    }
+
+    
+  }
+}
+
+.nav-search-results {
+  animation: .2s 1 fadeInComponent;
+  animation-timing-function: ease-in-out;
+  background-color: $black;
+  display: none;
+  list-style: none;
+  overflow: hidden;
+  padding: 0 0 2px 0;
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 40px;
+  transition: .3s ease width;
+  white-space: nowrap;
+  width: 350px;
+
+  &:hover {
+    display: block;
+  }
+
+  &__link {
+    border-top: 2px solid $black-dark;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    padding: 1em .5em;
+    margin: 0 2px;
+    transition: .2s ease all;
+
+    &:hover, &:focus {
+      background-color: $primary;
+      color: $black;
+      text-decoration: none;
     }
   }
 }

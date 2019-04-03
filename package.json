@@ -33,9 +33,11 @@
         "not op_mini all"
     ],
     "homepage": "/wordpress/wp-content/themes/jolt",
-    "browserLaunchTo": "http://localhost:8080/wordpress",
+    "browserLaunchTo": "http://192.168.64.2/wordpress",
+    "homepageDev2": "/wp-content/themes/jolt",
+    "browserLaunchToDev2": "http://test321.joltradio.org/",
     "homepageDev": "/wp-content/themes/jolt",
-    "browserLaunchToDev": "http://test321.joltradio.org/",
+    "browserLaunchToDev": "http://www.joltradio.org/",
     "devDependencies": {
         "node-sass": "^4.10.0",
         "svg-sprite-loader": "^4.1.3"

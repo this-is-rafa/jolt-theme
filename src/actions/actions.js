@@ -1,5 +1,17 @@
 const JoltSettings = window.JoltSettings;
 
+export const incrementLoad = () => {
+  return(dispatch) => {
+    dispatch({type: 'LOAD'});
+  }
+}
+
+export const decrementLoad = () => {
+  return(dispatch) => {
+    dispatch({type: 'UNLOAD'});
+  }
+}
+
 export const getEvents = () => {
   return(dispatch) => {
     fetch(JoltSettings.URL.api + '/jolt-cal')
@@ -59,4 +71,65 @@ export const setCurrentShow = (events) => {
     }
   }
 
+}
+
+export const getSearch = (query) => {
+  return(dispatch) => {
+    dispatch(setSearchQuery(query));
+    dispatch(setSearchStatus(true));
+    if (query === "") {
+      dispatch(setSearchStatus(false));
+      return dispatch(setSearchResults([]));
+    }
+
+    fetch(JoltSettings.URL.api + '/artists?search=' + query + '&_embed&per_page=12')
+      .then( function(response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then( function(results) {
+        let searchResults = [];
+        results.forEach(function(single) {
+          searchResults.push(single);
+        });
+        dispatch(setSearchResults(searchResults));
+        dispatch(setSearchStatus(false));
+      })
+      .catch(function(error) {
+        console.log('Could not fetch events: ' + error.message);
+      });
+  }
+}
+
+export const setSearchResults = (searchResults) => {
+  return {
+    type: 'SET_SEARCH_RESULTS',
+    searchResults: searchResults
+  }
+}
+
+export const setSearchQuery = (searchQuery) => {
+  return {
+    type: 'SET_SEARCH_QUERY',
+    searchQuery: searchQuery
+  }
+}
+
+export const setSearchStatus = (searchStatus) => {
+  return {
+    type: 'SET_SEARCH_STATUS',
+    searchStatus: searchStatus
+  }
+}
+
+export const setPostList = (postList) => {
+  return(dispatch) => 
+  dispatch(
+    {
+      type: 'SET_POSTLIST',
+      postList: postList
+    }
+  );
 }

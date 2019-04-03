@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import SinglePost from './containers/SinglePost/SinglePost';
 
 const JoltSettings = window.JoltSettings;
@@ -28,6 +29,13 @@ class Show extends Component {
     this.getShow();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      this.getShow();
+    }
+  }
+
+
   getShow() {
     this.props.incrementLoad();
 
@@ -54,7 +62,7 @@ class Show extends Component {
   }
   
   render() {
-    let single = <SinglePost post={this.state.show} />;
+    let single = <SinglePost post={this.state.show} key={this.props.location} />;
 
     return (
       <div>
@@ -64,4 +72,4 @@ class Show extends Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Show);
+export default withRouter(connect(null, mapDispatchToProps)(Show));

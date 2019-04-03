@@ -33,6 +33,7 @@ h6, .h6 {
 
 .c-wrap {
   padding-top: 88px;
+  min-height: calc(100vh - 223px);
 }
 
 .c-bg-wrap {
@@ -41,6 +42,11 @@ h6, .h6 {
   background-color: $black-dark;
   padding: 15px;
   margin: 0 -15px;
+
+  &--donate {
+    position: relative;
+    overflow: hidden;
+  }
 
   @include mq('tablet') {
     margin: 0 auto;

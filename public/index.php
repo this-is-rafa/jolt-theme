@@ -1,5 +1,4 @@
 <?php
-  $TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH);
   $title = is_front_page() ? get_bloginfo('name') : get_the_title() . ' | ' . get_bloginfo('name');
   $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
 ?>
@@ -49,8 +48,17 @@
     <?php endif; //is_front_page ?>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@joltradio" />
-    <link rel="manifest" href="<?php echo $TEMPLATE_PATH; ?>/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico?" type="image/x-icon">
+    <link rel="manifest" href="<?php bloginfo('template_url') ?>/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_url') ?>/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_url') ?>/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_url') ?>/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?php bloginfo('template_url') ?>/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="<?php bloginfo('template_url') ?>/images/favicons/safari-pinned-tab.svg" color="#333333">
+    <link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#fff41d">
+    <meta name="msapplication-config" content="<?php bloginfo('template_url') ?>/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <title><?php echo $title; ?></title>
     <style>body{background-color: #111; color: #111;}a{color:#111}</style>
     <?php wp_head(); ?>
@@ -103,6 +111,19 @@
           c-0.24,0.25-0.661,0.053-0.573-0.294c0.651-3.303,2.132-13.726-3.373-22.643c-0.147-0.268,0.07-0.602,0.371-0.523l2.704,0.701
           c0.229,0.065,0.445-0.125,0.413-0.35c-0.182-1.674-1.155-7.435-6.58-13.992c-0.172-0.249-0.011-0.605,0.306-0.56l3.112,0.398
           c0.268,0.039,0.479-0.253,0.352-0.491c-0.759-1.441-3.265-5.58-9.85-10.509C13.33,0.948,13.434,0.508,13.768,0.52"/>
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 50 50">
+        <path d="M46.894,40.976l-11.52-11.521c1.644-2.686,2.642-5.814,2.642-9.197c0-9.806-7.955-17.758-17.758-17.758
+	      c-9.805,0-17.758,7.953-17.758,17.758c0,9.803,7.953,17.758,17.758,17.758c3.383,0,6.511-0.998,9.196-2.636l11.521,11.515
+	      c0.81,0.809,2.15,0.803,2.96,0l2.959-2.961C47.703,43.126,47.703,41.785,46.894,40.976z M20.257,32.097
+	      c-6.538,0-11.839-5.301-11.839-11.838c0-6.538,5.301-11.839,11.839-11.839c6.538,0,11.838,5.301,11.838,11.839
+	      C32.096,26.796,26.795,32.097,20.257,32.097z"/>
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 50 50">
+        <path d="M29.545,25L46.559,7.987c1.255-1.255,1.255-3.29,0-4.545c-1.256-1.256-3.29-1.256-4.546,0L25,20.455L7.987,3.442
+        c-1.255-1.256-3.29-1.256-4.545,0c-1.256,1.255-1.256,3.29,0,4.545L20.455,25L3.442,42.013c-1.256,1.256-1.256,3.29,0,4.546
+        c0.627,0.628,1.45,0.941,2.272,0.941s1.645-0.313,2.272-0.941L25,29.545l17.013,17.014c0.628,0.628,1.45,0.941,2.273,0.941
+        c0.822,0,1.645-0.313,2.272-0.941c1.255-1.256,1.255-3.29,0-4.546L29.545,25z"/>
       </symbol>
     </svg>
     <div id="root">

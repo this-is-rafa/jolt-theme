@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import TitleBlock from '../../../../components/TitleBlock/TitleBlock';
-import PostList from '../../../../components/PostList/PostList';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import TitleBlock from "../../../../components/TitleBlock/TitleBlock";
+import PostList from "../../../../components/PostList/PostList";
 
 const JoltSettings = window.JoltSettings;
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     incrementLoad: () => {
-      const action = {type: 'LOAD'};
+      const action = { type: "LOAD" };
       dispatch(action);
     },
     decrementLoad: () => {
-      const action = {type: 'UNLOAD'};
+      const action = { type: "UNLOAD" };
       dispatch(action);
     }
-  }
-}
+  };
+};
 
 class UpcomingShows extends Component {
-
   state = {
     posts: []
   };
@@ -33,30 +32,30 @@ class UpcomingShows extends Component {
     this.props.incrementLoad();
     let _this = this;
 
-    fetch(JoltSettings.URL.api + '/jolt-upcoming/')
-      .then( function(response) {
+    fetch(JoltSettings.URL.api + "/jolt-upcoming/")
+      .then(function(response) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
         return response.json();
       })
-      .then( function(results) {
+      .then(function(results) {
         let allPosts = [];
-        
+
         results.some(function(single) {
-          if ( !(typeof single.start_timestamp === 'undefined' ) ) {
-            if ( _this.timeCheck(single) ) {
-              allPosts.push(single);           
+          if (!(typeof single.start_timestamp === "undefined")) {
+            if (_this.timeCheck(single)) {
+              allPosts.push(single);
             }
           }
           return allPosts.length > 5;
         });
 
-        _this.setState({posts: allPosts});
+        _this.setState({ posts: allPosts });
         _this.props.decrementLoad();
       })
       .catch(function(error) {
-        console.log('Could not fetch shows: ' + error.message);
+        console.log("Could not fetch shows: " + error.message);
       });
   }
 
@@ -64,7 +63,7 @@ class UpcomingShows extends Component {
     let now = new Date();
     let showTime = new Date(show.start_timestamp);
 
-    if ( showTime > now ) {
+    if (showTime > now) {
       return true;
     }
 
@@ -72,8 +71,8 @@ class UpcomingShows extends Component {
   }
 
   render() {
-    if ( this.state.posts.length > 0 ) {
-      return(
+    if (this.state.posts.length > 0) {
+      return (
         <section className="posts">
           <div className="container">
             <TitleBlock title="Upcoming Shows">
@@ -86,12 +85,14 @@ class UpcomingShows extends Component {
             </TitleBlock>
           </div>
         </section>
-      );  
+      );
     } else {
       return null;
     }
-  };
-
+  }
 }
 
-export default connect(null, mapDispatchToProps)(UpcomingShows);
+export default connect(
+  null,
+  mapDispatchToProps
+)(UpcomingShows);

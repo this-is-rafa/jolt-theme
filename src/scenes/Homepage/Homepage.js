@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import UpcomingShows from './components/UpcomingShows/UpcomingShows';
 import Banner from './components/Banner/Banner';
 import Schedule from './components/Schedule/Schedule';
-import Wrap from '../../hoc/Wrap/Wrap';
+import Donate from './components/Donate/Donate';
 
 const homepage = () => (
-  <Wrap>
+  <Fragment>
     <Banner />
     <Schedule />
+    <Donate />
     <UpcomingShows />
-  </Wrap>
+  </Fragment>
 );
 
 export default homepage;
