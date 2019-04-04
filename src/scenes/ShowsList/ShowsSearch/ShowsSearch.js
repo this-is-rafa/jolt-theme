@@ -63,6 +63,10 @@ class ShowsSearch extends Component {
   handleClear = () => {
     this.props.setSearchResults([]);
     this.props.setSearchQuery("");
+    this.props.setPostList({
+      ...this.props.postList,
+      getPosts: true
+    });
   };
 
   render() {
