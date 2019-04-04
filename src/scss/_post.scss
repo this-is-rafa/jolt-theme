@@ -45,10 +45,12 @@
 .post-banner {
   animation: .5s 1 fadeInComponent;
   animation-timing-function: ease-in-out;
+  border-bottom: 1px solid #3c3c3c;
   margin: 0 -15px 40px;
   position: relative;
 
   @include mq('tablet') {
+    border: 0;
     margin: 0 0 40px;
   }
 

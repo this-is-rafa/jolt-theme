@@ -3,6 +3,7 @@
   animation-timing-function: ease-in-out;
   background-position: center center;
   background-size: cover;
+  border-bottom: 1px solid #3c3c3c;
   height: 0;
   margin: 0 auto;
   position: relative;
@@ -63,6 +64,10 @@
   margin-bottom: 40px;
   table-layout: fixed;
   width: 100%;
+
+  @include mq('tablet') {
+    margin-bottom: 0;
+  }
 
   &__header {
     background-color: transparent;
@@ -288,12 +293,14 @@
 }
 
 .donate-bg {
-  display: none;
+  display: block;
   position: absolute;
   transform: rotateZ(-10deg);
+  width: 100px;
+  right: -7%;
+  bottom: -10%;
 
   @include mq('tablet') {
-    display: block;
     top: -14%;
     right: 4%;
     width: 322px;
