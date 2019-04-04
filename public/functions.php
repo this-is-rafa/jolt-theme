@@ -16,6 +16,12 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
 
+// Enable the option show in rest - ACF to REST API
+add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
+
+// Enable the option edit in rest - ACF to REST API
+add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
+
 function jolt_scripts() {
   wp_enqueue_script( 'jolt-script', get_stylesheet_directory_uri() . '/dist/app.js' , array(), '1.0', true );
 
@@ -98,3 +104,4 @@ function jolt_truncate($text, $chars = 300) {
   $text = $text."...";
   return $text;
 }
+
