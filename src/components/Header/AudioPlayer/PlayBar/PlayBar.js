@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Icon from '../../../UI/Icon/Icon';
 import LiveTextBox from '../LiveTextBox/LiveTextBox';
+import PlayButton from '../PlayButton/PlayButton';
+import VideoOverrideButton from '../VideoOverrideButton/VideoOverrideButton';
+import Volume from '../Volume/Volume';
 
 class PlayBar extends Component {
 
@@ -11,24 +13,26 @@ class PlayBar extends Component {
 
   audioUrl = 'http://198.27.80.205:5220/stream/&amp;amp;type=m3u';
 
+  volumeRange = React.createRef();
+
   componentDidMount() {
-    this.initialVolume();
-    this.volumeRange.addEventListener('change', this.setVolume);
+      this.initialVolume();
+      this.volumeRange.current.addEventListener('change', this.setVolume);
   }
 
   initialVolume = () => {
     const volume = Number( localStorage.getItem('apVolume') ) || 100;
     if ( volume < 1 ) {
-      this.volumeRange.value = 100;
+      this.volumeRange.current.value = 100;
     } else {
-      this.volumeRange.value = volume;
+      this.volumeRange.current.value = volume;
     }
     this.setVolume();
   }
 
   setVolume = () => {
-    this.audio.volume = this.volumeRange.value / 100;
-    localStorage.setItem('apVolume', this.volumeRange.value);
+    this.audio.volume = this.volumeRange.current.value / 100;
+    localStorage.setItem('apVolume', this.volumeRange.current.value);
   }
 
   playPauseHandler = () => {
@@ -59,16 +63,10 @@ class PlayBar extends Component {
         <div className="play-bar__box play-bar__box--live-indicator">
           Stream On <div className="play-bar__live-dot"></div>
         </div>
-        <div onClick={this.playPauseHandler} className="play-bar__box play-bar__box--play-pause" aria-label="Play / Pause">
-          { this.state.playing ? <Icon name="stop" parentClass="play-bar" /> : <Icon name="play" parentClass="play-bar" /> }
-        </div>
+        <PlayButton clicked={() => this.playPauseHandler()} playStatus={this.state.playing}/>
         <LiveTextBox />
-        <div id="js-volume-box" className="play-bar__box play-bar__box--volume-box">
-          <Icon name="volume" parentClass="play-bar" />
-        </div>
-        <div className="play-bar__box play-bar__box--volume-bar-box">
-          <input ref={volumeRange => (this.volumeRange = volumeRange)} className="play-bar__volume-range" type="range" />
-        </div>
+        <VideoOverrideButton />
+        <Volume ref={this.volumeRange} />
       </div>
     );
   }

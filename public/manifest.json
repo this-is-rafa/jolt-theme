@@ -27,7 +27,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "http://192.168.129.209:8080/wordpress",
+  "start_url": "http://www.joltradio.org",
   "display": "standalone",
   "theme_color": "#FFF41D",
   "background_color": "#111111"

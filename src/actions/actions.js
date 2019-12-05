@@ -133,3 +133,10 @@ export const setPostList = (postList) => {
     }
   );
 }
+
+export const setTwitchStatus = (twitchStatus) => {
+  return {
+    type: 'SET_TWITCH_STATUS',
+    twitchStatus: twitchStatus
+  }
+}

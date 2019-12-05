@@ -3,7 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@devloco/react-scripts-wptheme": "^2.1.1-wptheme-2.1.4",
         "@wordpress/html-entities": "^2.0.4",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
@@ -34,12 +33,10 @@
     ],
     "homepage": "/wordpress/wp-content/themes/jolt",
     "browserLaunchTo": "http://192.168.64.2/wordpress",
-    "homepageDev2": "/wp-content/themes/jolt",
-    "browserLaunchToDev2": "http://test321.joltradio.org/",
-    "homepageDev": "/wp-content/themes/jolt",
-    "browserLaunchToDev": "http://www.joltradio.org/",
     "devDependencies": {
-        "node-sass": "^4.10.0",
+        "@devloco/react-scripts-wptheme": "^3.2.0-wp.2",
+        "node-sass": "^4.12.0",
+        "react-twitch-embed-video": "^1.0.1",
         "svg-sprite-loader": "^4.1.3"
     }
 }

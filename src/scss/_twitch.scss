@@ -1,0 +1,14 @@
+.video-embed {
+  animation: .5s 1 fadeInComponent;
+  margin-bottom: -88px;
+  padding-top: 88px;
+}
+
+#twitch-embed {
+  border-bottom: 1px solid #3c3c3c;
+  height: calc(100vw * .5625);
+  
+  @include mq('tablet') {
+    margin-bottom: 40px;
+  }
+}

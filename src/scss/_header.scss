@@ -273,13 +273,13 @@
   color: $black;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   position: relative;
   width: 100%;
   z-index: z('play-bar');
 
   &__box {
     align-items: center;
-    border-right: 2px solid $black-dark;
     display: flex;
     font-size: 13px;
     font-weight: 700;
@@ -287,32 +287,40 @@
     justify-content: center;
 
     &--live-indicator {
+      border-right: 2px solid $black-dark;
       text-transform: uppercase;
       width: 97px;
     }
 
     &--play-pause {
       cursor: pointer;
-      border: 0;
       width: 36px;
     }
 
     &--live-text {
-      border: 0;
       justify-content: flex-start;
       overflow: hidden;
       width: calc(100% - 133px);
 
       @include mq('tablet-wide') {
-        border-right: 2px solid $black-dark;
         width: calc(100% - 171px);
+      }
+    }
+
+    &--video-override {
+      cursor: pointer;
+      opacity: .6;
+      width: 80px;
+
+      &:hover {
+        opacity: 1;
       }
     }
 
     &--volume-box {
       cursor: pointer;
       display: none;
-      border-right: 0;
+      border-left: 2px solid $black-dark;
       width: 38px;
 
       &:hover + .play-bar__box--volume-bar-box {

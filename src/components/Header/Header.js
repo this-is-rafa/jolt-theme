@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Nav from './Nav/Nav';
 import AudioPlayer from './AudioPlayer/AudioPlayer';
 import NavMobile from './NavMobile/NavMobile';
+import LiveVideoCheck from './LiveVideoCheck/LiveVideoCheck';
 
 class Header extends Component {
   state = {
@@ -15,11 +16,14 @@ class Header extends Component {
 
   render() {
     return(
-      <header className="header">
-        <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
-        <AudioPlayer />
-        <NavMobile close={this.openMenuHandler} open={this.state.menuOpen} />
-      </header>
+      <Fragment>
+        <header className="header">
+          <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
+          <AudioPlayer />
+          <NavMobile close={this.openMenuHandler} open={this.state.menuOpen} />
+        </header>
+        <LiveVideoCheck />
+      </Fragment>
     );
   }
 }

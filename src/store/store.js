@@ -16,6 +16,10 @@ const initialState = {
     posts: [],
     page: 1,
     getPosts: true
+  },
+  twitchStatus: {
+    live: false,
+    override: false
   }
 }
 
@@ -63,6 +67,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         postList: action.postList
+      }
+    case 'SET_TWITCH_STATUS':
+      return {
+        ...state,
+        twitchStatus: action.twitchStatus
       }
     default:
       return state;
