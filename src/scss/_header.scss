@@ -268,6 +268,7 @@
 }
 
 .play-bar {
+  align-items: center;
   background-color: $primary;
   border: 2px solid $black-dark;
   color: $black;
@@ -289,6 +290,7 @@
     &--live-indicator {
       border-right: 2px solid $black-dark;
       text-transform: uppercase;
+      min-width: 97px;
       width: 97px;
     }
 
@@ -300,21 +302,7 @@
     &--live-text {
       justify-content: flex-start;
       overflow: hidden;
-      width: calc(100% - 133px);
-
-      @include mq('tablet-wide') {
-        width: calc(100% - 171px);
-      }
-    }
-
-    &--video-override {
-      cursor: pointer;
-      opacity: .6;
-      width: 80px;
-
-      &:hover {
-        opacity: 1;
-      }
+      flex-grow: 1;
     }
 
     &--volume-box {
@@ -347,6 +335,23 @@
       &:hover {
         display: flex;
       }
+    }
+  }
+
+  &__btn {
+    background-color: $black;
+    border: 1px solid $black;
+    color: shade($white, 10);
+    cursor: pointer;
+    font-size: 13px;
+    height: 23px;
+    margin-left: 10px;
+    min-width: 80px;
+    padding: 0;
+    width: 80px;
+
+    &:hover {
+      opacity: 1;
     }
   }
 

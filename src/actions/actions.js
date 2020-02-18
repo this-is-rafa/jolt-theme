@@ -140,3 +140,10 @@ export const setTwitchStatus = (twitchStatus) => {
     twitchStatus: twitchStatus
   }
 }
+
+export const setAudioStatus = (audioStatus) => {
+  return {
+    type: 'SET_AUDIO_STATUS',
+    audioStatus: audioStatus
+  }
+}

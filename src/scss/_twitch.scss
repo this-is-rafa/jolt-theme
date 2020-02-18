@@ -11,4 +11,9 @@
   @include mq('tablet') {
     margin-bottom: 40px;
   }
+
+  & iframe {
+    width: 100%;
+    height: 100%;
+  }
 }

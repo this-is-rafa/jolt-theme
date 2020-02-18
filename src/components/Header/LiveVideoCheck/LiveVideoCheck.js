@@ -30,7 +30,6 @@ class LiveVideoCheck extends Component {
   }
 
   checkTwitchLive() {
-    //this.props.incrementLoad();
     let _this = this;
 
     fetch(JoltSettings.URL.api + "/jolt-twitch/")
@@ -43,8 +42,8 @@ class LiveVideoCheck extends Component {
       .then(function(results) {
         if (results !== null) {
           _this.props.setTwitchStatus({
-            ..._this.props.twitchStatus, 
-            live: results.live 
+            ..._this.props.twitchStatus,
+            live: results.live
           });
         }
       })
@@ -54,16 +53,12 @@ class LiveVideoCheck extends Component {
   }
 
   render() {
-    
     if (!this.props.override && this.props.isLive) {
-      return <Twitch />;
+      return <Twitch audioElement={this.props.audioElement} />;
     }
 
     return null;
   }
 }
 
-export default connect(
-  mapStateToProps,
-  actionCreators
-)(LiveVideoCheck);
+export default connect(mapStateToProps, actionCreators)(LiveVideoCheck);

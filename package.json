@@ -36,7 +36,7 @@
     "devDependencies": {
         "@devloco/react-scripts-wptheme": "^3.2.0-wp.2",
         "node-sass": "^4.12.0",
-        "react-twitch-embed-video": "^1.0.1",
+        "react-twitch-embed-video": "^1.1.4",
         "svg-sprite-loader": "^4.1.3"
     }
 }

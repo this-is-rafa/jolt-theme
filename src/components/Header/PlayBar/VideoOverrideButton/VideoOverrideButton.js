@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const videoOverrideButton = props => {
   if (props.isLive) {
     return (
-      <div
+      <button
         id="js-video-override"
         onClick={() =>
           props.setTwitchStatus({
@@ -21,10 +21,10 @@ const videoOverrideButton = props => {
             override: !props.override
           })
         }
-        className="play-bar__box play-bar__box--video-override"
+        className="play-bar__btn"
       >
         {props.override ? "Live Video" : "Audio Only"}
-      </div>
+      </button>
     );
   }
 

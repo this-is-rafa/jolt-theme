@@ -20,6 +20,9 @@ const initialState = {
   twitchStatus: {
     live: false,
     override: false
+  },
+  audioStatus: {
+    playing: false
   }
 }
 
@@ -72,6 +75,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         twitchStatus: action.twitchStatus
+      }
+    case 'SET_AUDIO_STATUS':
+      return {
+        ...state,
+        audioStatus: action.audioStatus
       }
     default:
       return state;

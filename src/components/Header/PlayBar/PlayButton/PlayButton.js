@@ -10,14 +10,14 @@ const mapStateToProps = state => {
 };
 
 const playButton = props => {
-  if (!props.isLive || props.override) {
+  if (true || !props.isLive || props.override) {
     return (
       <div
         onClick={props.clicked}
         className="play-bar__box play-bar__box--play-pause"
         aria-label="Play / Pause"
       >
-        {props.playStatus ? (
+        {props.audioStatus ? (
           <Icon name="stop" parentClass="play-bar" />
         ) : (
           <Icon name="play" parentClass="play-bar" />
@@ -25,8 +25,6 @@ const playButton = props => {
       </div>
     );
   }
-
-  return null;
 };
 
 export default connect(mapStateToProps, null)(playButton);
