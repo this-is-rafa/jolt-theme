@@ -19,7 +19,7 @@ class Twitch extends Component {
         playing: false
       });
     }
-    console.log('pause handler');
+    console.log("pause handler");
   };
 
   render() {

@@ -92,7 +92,4 @@ class ShowsSearch extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  actionCreators
-)(ShowsSearch);
+export default connect(mapStateToProps, actionCreators)(ShowsSearch);

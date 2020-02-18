@@ -92,7 +92,4 @@ class UpcomingShows extends Component {
   }
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(UpcomingShows);
+export default connect(null, mapDispatchToProps)(UpcomingShows);

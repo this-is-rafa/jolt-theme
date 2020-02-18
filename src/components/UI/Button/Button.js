@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const button = (props) => (
-  <button 
-    className={props.classes ? 'btn ' + props.classes : 'btn'}
+const button = props => (
+  <button
+    className={props.classes ? "btn " + props.classes : "btn"}
     onClick={props.clicked}
     aria-label={props.children}
     disabled={props.disabled}
   >
-      {props.children}
-  </button> 
-)
+    {props.children}
+  </button>
+);
 
 export default button;

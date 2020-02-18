@@ -82,9 +82,4 @@ class NavSearch extends Component {
   }
 }
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    actionCreators
-  )(NavSearch)
-);
+export default withRouter(connect(mapStateToProps, actionCreators)(NavSearch));

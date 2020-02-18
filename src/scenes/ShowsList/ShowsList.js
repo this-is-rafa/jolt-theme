@@ -133,7 +133,4 @@ class ShowsList extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  actionCreators
-)(ShowsList);
+export default connect(mapStateToProps, actionCreators)(ShowsList);

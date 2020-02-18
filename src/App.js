@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { withRouter } from 'react-router-dom';
-import * as actionCreators from './actions/actions';
-import Header from './components/Header/Header';
-import Main from './containers/Main/Main';
-import LoadOverlay from './hoc/LoadOverlay/LoadOverlay';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
+import { withRouter } from "react-router-dom";
+import * as actionCreators from "./actions/actions";
+import Header from "./components/Header/Header";
+import Main from "./containers/Main/Main";
+import LoadOverlay from "./hoc/LoadOverlay/LoadOverlay";
 
 const JoltSettings = window.JoltSettings;
 
@@ -28,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default withRouter( connect(null, actionCreators)(App) );
+export default withRouter(connect(null, actionCreators)(App));

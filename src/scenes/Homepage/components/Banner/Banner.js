@@ -84,7 +84,4 @@ class Banner extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Banner);
+export default connect(mapStateToProps, mapDispatchToProps)(Banner);

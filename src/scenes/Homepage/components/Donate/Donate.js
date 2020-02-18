@@ -93,7 +93,4 @@ class Donate extends Component {
   }
 }
 
-export default connect(
-  null,
-  actionCreators
-)(Donate);
+export default connect(null, actionCreators)(Donate);

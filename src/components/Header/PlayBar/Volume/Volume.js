@@ -1,16 +1,7 @@
 import React, { Fragment } from "react";
 import Icon from "../../../UI/Icon/Icon";
-// import { connect } from "react-redux";
-
-// const mapStateToProps = state => {
-//   return {
-//     isLive: state.twitchStatus.live,
-//     override: state.twitchStatus.override
-//   };
-// };
 
 const volume = React.forwardRef((props, volumeRange) => {
-  //if (!props.isLive || props.override) {
   return (
     <Fragment>
       <div
@@ -28,9 +19,6 @@ const volume = React.forwardRef((props, volumeRange) => {
       </div>
     </Fragment>
   );
-  //}
-
-  //return null;
 });
 
 export default volume;

@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 const initialState = {
   loading: 0,
@@ -10,7 +10,7 @@ const initialState = {
   search: {
     query: "",
     results: [],
-    searching: false 
+    searching: false
   },
   postList: {
     posts: [],
@@ -24,68 +24,67 @@ const initialState = {
   audioStatus: {
     playing: false
   }
-}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOAD':
-      return {...state, loading: state.loading + 1}
-    case 'UNLOAD':
-      return {...state, loading: state.loading - 1}
-    case 'SET_EVENTS':
+    case "LOAD":
+      return { ...state, loading: state.loading + 1 };
+    case "UNLOAD":
+      return { ...state, loading: state.loading - 1 };
+    case "SET_EVENTS":
       return {
         ...state,
         events: action.events
-      }
-    case 'SET_CURRENT_SHOW':
+      };
+    case "SET_CURRENT_SHOW":
       return {
         ...state,
         currentShow: action.currentShow
-      }
-    case 'SET_SEARCH_RESULTS':
+      };
+    case "SET_SEARCH_RESULTS":
       return {
         ...state,
         search: {
           ...state.search,
           results: action.searchResults
         }
-      }
-    case 'SET_SEARCH_QUERY': 
+      };
+    case "SET_SEARCH_QUERY":
       return {
         ...state,
         search: {
           ...state.search,
           query: action.searchQuery
         }
-      }
-    case 'SET_SEARCH_STATUS': 
+      };
+    case "SET_SEARCH_STATUS":
       return {
         ...state,
         search: {
           ...state.search,
           searching: action.searchStatus
         }
-      }
-    case 'SET_POSTLIST':
+      };
+    case "SET_POSTLIST":
       return {
         ...state,
         postList: action.postList
-      }
-    case 'SET_TWITCH_STATUS':
+      };
+    case "SET_TWITCH_STATUS":
       return {
         ...state,
         twitchStatus: action.twitchStatus
-      }
-    case 'SET_AUDIO_STATUS':
+      };
+    case "SET_AUDIO_STATUS":
       return {
         ...state,
         audioStatus: action.audioStatus
-      }
+      };
     default:
       return state;
   }
-}
-
+};
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
