@@ -60,13 +60,10 @@
     <meta name="theme-color" content="#ffffff">
 
     <title><?php echo $title; ?></title>
-    <style>body{background-color: #111; color: #111;}a{color:#111}</style>
+    <!-- style>body{background-color: #111; color: #111;}a{color:#111}</style -->
     <?php wp_head(); ?>
   </head>
   <body>
-    <noscript>
-      <div style="background-color:#fff">Jolt Radio relies on javascript for its audio player, and pretty much everything else.<br><br><a href="http://198.27.80.205:5220/stream/&amp;amp;type=m3u">Link to Audio</a></div>
-    </noscript>
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
       <symbol id="icon-play" viewBox="0 0 50 50">
         <path display="inline" d="M40.768,23.268L11.232,6.215c-0.619-0.357-1.381-0.357-2,0c-0.619,0.357-1,1.018-1,1.732v34.105
@@ -126,8 +123,27 @@
         c0.822,0,1.645-0.313,2.272-0.941c1.255-1.256,1.255-3.29,0-4.546L29.545,25z"/>
       </symbol>
     </svg>
-    <div id="root">
+    <div id="root" class="root">
       <div class="load-overlay load-overlay--active"></div>
+      <noscript>
+        <div class="ns-content">
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <h1><?php the_title(); ?></h1>
+          <?php the_content(); endwhile; endif; ?>
+
+          <audio
+            id="ns-player"
+            className="ns-content__audio-player"
+            preload="metadata"
+            src="http://198.27.80.205:5220/stream/&amp;amp;type=m3u"
+          >
+            Your browser can't play this. Try
+            <a href="https://www.getfirefox.com">Firefox browser</a>.
+          </audio>
+          <a href="http://198.27.80.205:5220/stream/&amp;amp;type=m3u">Direct link to audio stream</a></div>
+        </div>
+      </noscript>
+      
     </div>
     <footer class="footer">
       <div class="container">

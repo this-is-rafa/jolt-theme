@@ -1,0 +1,17 @@
+.ns-content {
+  background-color: $black-dark;
+  color: $white;
+  font-family: $font-stack;
+  position: relative;
+  z-index: z('noscript');
+
+  & a {
+    color: $primary;
+    text-decoration: underline;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}

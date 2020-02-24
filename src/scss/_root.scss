@@ -31,6 +31,13 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+.root {
+  min-height: 60vh;
+  @include mq('tablet') {
+    min-height: 80vh;
+  }
+}
+
 .c-wrap {
   padding-top: 88px;
   min-height: calc(100vh - 223px);
