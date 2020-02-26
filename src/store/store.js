@@ -19,7 +19,8 @@ const initialState = {
   },
   twitchStatus: {
     live: false,
-    override: false
+    override: false,
+    player: null
   },
   audioStatus: {
     playing: false

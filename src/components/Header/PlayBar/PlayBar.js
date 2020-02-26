@@ -9,7 +9,8 @@ import * as actionCreators from "../../../actions/actions";
 const mapStateToProps = state => {
   return {
     audioStatus: state.audioStatus,
-    playing: state.audioStatus.playing
+    playing: state.audioStatus.playing,
+    twitchPlayer: state.twitchStatus.player
   };
 };
 
@@ -60,6 +61,9 @@ class PlayBar extends Component {
         ...this.props.audioStatus,
         playing: false
       });
+    }
+    if (this.props.twitchPlayer) {
+      this.props.twitchPlayer.pause();
     }
   };
 

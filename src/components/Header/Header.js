@@ -31,7 +31,6 @@ class Header extends Component {
           to stream:
           <a href="http://198.27.80.205:5220/stream/&amp;type=m3u">link</a>
         </audio>
-        {console.log(this.audioRef)}
         <header className="header">
           <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
           <PlayBar audioElement={this.audioRef} />

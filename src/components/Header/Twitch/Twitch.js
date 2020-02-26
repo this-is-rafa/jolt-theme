@@ -5,11 +5,20 @@ import * as actionCreators from "../../../actions/actions";
 
 const mapStateToProps = state => {
   return {
-    audioStatus: state.audioStatus
+    audioStatus: state.audioStatus,
+    twitchStatus: state.twitchStatus
   };
 };
 
 class Twitch extends Component {
+  componentWillUnmount() {
+    this.props.setTwitchStatus({
+      ...this.props.twitchStatus,
+      override: true,
+      player: null
+    });
+  }
+
   pauseHandler = () => {
     if (!this.props.audioElement.current.paused) {
       this.props.audioElement.current.pause();
@@ -19,7 +28,13 @@ class Twitch extends Component {
         playing: false
       });
     }
-    console.log("pause handler");
+  };
+
+  setPlayerObject = twitchPlayer => {
+    this.props.setTwitchStatus({
+      ...this.props.twitchStatus,
+      player: twitchPlayer
+    });
   };
 
   render() {
@@ -30,6 +45,7 @@ class Twitch extends Component {
           targetClass="twitch-embed"
           layout="video"
           onVideoPlay={this.pauseHandler}
+          onPlayerReady={this.setPlayerObject}
           theme="dark"
           autoplay={false}
         />
