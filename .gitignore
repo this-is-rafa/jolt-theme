@@ -12,6 +12,12 @@
 # production
 /build
 
+#self-signed-ssl
+/sslcert/server.crt
+/sslcert/server.csr
+/sslcert/server.key
+/sslcert/v3.ext
+
 # misc
 .DS_Store
 .env.local

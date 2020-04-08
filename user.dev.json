@@ -10,10 +10,10 @@
     },
     "wpThemeServer": {
         "enable": true,
-        "host": "127.0.0.1",
+        "host": "192.168.64.2",
         "port": 8090,
-        "sslCert": null,
-        "sslKey": null,
+        "sslCert": "sslcert/server.crt",
+        "sslKey": "sslcert/server.key",
         "watchFile": "../index.php"
     },
     "injectWpThemeClient": {

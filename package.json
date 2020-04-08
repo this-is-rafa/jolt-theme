@@ -31,8 +31,8 @@
         "not ie <= 11",
         "not op_mini all"
     ],
-    "homepage": "/wordpress/wp-content/themes/jolt",
-    "browserLaunchTo": "http://192.168.64.2/wordpress",
+    "homepage": "wordpress/wp-content/themes/jolt",
+    "browserLaunchTo": "https://192.168.64.2/wordpress",
     "devDependencies": {
         "@devloco/react-scripts-wptheme": "^3.4.0-wp.1",
         "node-sass": "^4.13.1",

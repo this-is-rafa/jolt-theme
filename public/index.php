@@ -64,7 +64,7 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <svg xmlns="https://www.w3.org/2000/svg" style="display:none">
       <symbol id="icon-play" viewBox="0 0 50 50">
         <path display="inline" d="M40.768,23.268L11.232,6.215c-0.619-0.357-1.381-0.357-2,0c-0.619,0.357-1,1.018-1,1.732v34.105
         c0,0.715,0.381,1.375,1,1.732c0.31,0.179,0.655,0.268,1,0.268s0.69-0.089,1-0.268l29.536-17.053c0.619-0.357,1-1.018,1-1.732
@@ -135,12 +135,12 @@
             id="ns-player"
             className="ns-content__audio-player"
             preload="metadata"
-            src="http://198.27.80.205:5220/stream/&amp;amp;type=m3u"
+            src="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1"
           >
             Your browser can't play this. Try
             <a href="https://www.getfirefox.com">Firefox browser</a>.
           </audio>
-          <a href="http://198.27.80.205:5220/stream/&amp;amp;type=m3u">Direct link to audio stream</a></div>
+          <a href="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1">Direct link to audio stream</a></div>
         </div>
       </noscript>
       
