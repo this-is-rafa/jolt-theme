@@ -20,7 +20,7 @@ class PlayBar extends Component {
     volume: true
   };
 
-  audioUrl = "http://198.27.80.205:5220/stream/&amp;amp;type=m3u";
+  audioUrl = "https://usa12.fastcast4u.com/proxy/joltradi?mp=/1";
 
   volumeRange = React.createRef();
 

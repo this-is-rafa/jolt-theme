@@ -23,13 +23,13 @@ class Header extends Component {
           id="js-player"
           className="audio-player"
           preload="metadata"
-          src="http://198.27.80.205:5220/stream/&amp;amp;type=m3u"
+          src="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1"
           ref={this.audioRef}
         >
           Your browser can't play this. Try
           <a href="https://www.getfirefox.com">Firefox browser</a>. Direct link
           to stream:
-          <a href="http://198.27.80.205:5220/stream/&amp;type=m3u">link</a>
+          <a href="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1">link</a>
         </audio>
         <header className="header">
           <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
