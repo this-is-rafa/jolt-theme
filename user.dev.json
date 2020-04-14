@@ -1,25 +1,23 @@
 {
-    "fileWatcherPlugin": {
-        "touchFile": "./public/index.php",
-        "ignored": "./public/index.php",
-        "watchFileGlobs": [
-            "./public/**/*.js",
-            "./public/**/*.css",
-            "./public/**/*.php"
-        ]
-    },
-    "wpThemeServer": {
-        "enable": true,
-        "host": "192.168.64.2",
-        "port": 8090,
-        "sslCert": "sslcert/server.crt",
-        "sslKey": "sslcert/server.key",
-        "watchFile": "../index.php"
-    },
-    "injectWpThemeClient": {
-        "override": null,
-        "mode": "beforeToken",
-        "token": "</body>",
-        "file": "./build/index.php"
-    }
+  "fileWatcherPlugin": {
+    "touchFile": "./public/index.php",
+    "ignored": "./public/index.php",
+    "watchFileGlobs": [
+      "./public/**/*.js",
+      "./public/**/*.css",
+      "./public/**/*.php"
+    ]
+  },
+  "wpThemeServer": {
+    "enable": true,
+    "host": "192.168.64.2",
+    "port": 8090,
+    "sslCert": "sslcert/server.crt",
+    "sslKey": "sslcert/server.key",
+    "watchFile": "../index.php"
+  },
+  "injectWpThemeClient": {
+    "override": null,
+    "file": "./build/index.php"
+  }
 }
