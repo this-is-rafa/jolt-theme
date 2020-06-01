@@ -135,12 +135,12 @@
             id="ns-player"
             className="ns-content__audio-player"
             preload="metadata"
-            src="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1"
+            src="https://streamer.radio.co/sd8ab6b5aa/listen"
           >
             Your browser can't play this. Try
             <a href="https://www.getfirefox.com">Firefox browser</a>.
           </audio>
-          <a href="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1">Direct link to audio stream</a></div>
+          <a href="https://streamer.radio.co/sd8ab6b5aa/listen">Direct link to audio stream</a></div>
         </div>
       </noscript>
       

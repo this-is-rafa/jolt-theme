@@ -6,21 +6,21 @@ import Volume from "./Volume/Volume";
 import { connect } from "react-redux";
 import * as actionCreators from "../../../actions/actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     audioStatus: state.audioStatus,
     playing: state.audioStatus.playing,
-    twitchPlayer: state.twitchStatus.player
+    twitchPlayer: state.twitchStatus.player,
   };
 };
 
 class PlayBar extends Component {
   state = {
     playing: false,
-    volume: true
+    volume: true,
   };
 
-  audioUrl = "https://usa12.fastcast4u.com/proxy/joltradi?mp=/1";
+  audioUrl = "https://streamer.radio.co/sd8ab6b5aa/listen";
 
   volumeRange = React.createRef();
 
@@ -52,14 +52,14 @@ class PlayBar extends Component {
       this.props.audioElement.current.play();
       this.props.setAudioStatus({
         ...this.props.audioStatus,
-        playing: true
+        playing: true,
       });
     } else {
       this.props.audioElement.current.pause();
       this.props.audioElement.current.src = "";
       this.props.setAudioStatus({
         ...this.props.audioStatus,
-        playing: false
+        playing: false,
       });
     }
     if (this.props.twitchPlayer) {

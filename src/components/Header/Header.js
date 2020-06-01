@@ -6,7 +6,7 @@ import LiveVideoCheck from "./LiveVideoCheck/LiveVideoCheck";
 
 class Header extends Component {
   state = {
-    menuOpen: false
+    menuOpen: false,
   };
 
   audioRef = React.createRef();
@@ -23,13 +23,13 @@ class Header extends Component {
           id="js-player"
           className="audio-player"
           preload="metadata"
-          src="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1"
+          src="https://streamer.radio.co/sd8ab6b5aa/listen"
           ref={this.audioRef}
         >
           Your browser can't play this. Try
           <a href="https://www.getfirefox.com">Firefox browser</a>. Direct link
           to stream:
-          <a href="https://usa12.fastcast4u.com/proxy/joltradi?mp=/1">link</a>
+          <a href="https://streamer.radio.co/sd8ab6b5aa/listen">link</a>
         </audio>
         <header className="header">
           <Nav menuClick={this.openMenuHandler} open={this.state.menuOpen} />
