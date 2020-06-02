@@ -48,7 +48,7 @@ class PlayBar extends Component {
   playPauseHandler = () => {
     if (this.props.audioElement.current.paused) {
       let cacheBust = new Date().getTime();
-      this.props.audioElement.current.src = this.audioUrl + "&" + cacheBust;
+      this.props.audioElement.current.src = this.audioUrl + "?" + cacheBust;
       this.props.audioElement.current.play();
       this.props.setAudioStatus({
         ...this.props.audioStatus,
