@@ -4,6 +4,7 @@ import Homepage from "../../scenes/Homepage/Homepage";
 import Show from "../../scenes/Show/Show";
 import CatList from "../../scenes/CatList/CatList";
 import ShowsList from "../../scenes/ShowsList/ShowsList";
+import Page from "../../scenes/Page/Page";
 
 const JoltSettings = window.JoltSettings;
 
@@ -18,6 +19,7 @@ const main = () => (
         component={CatList}
       />
       <Route exact path={JoltSettings.path + "shows"} component={ShowsList} />
+      <Route exact path={JoltSettings.path + ":slug"} component={Page} />
     </Switch>
   </main>
 );

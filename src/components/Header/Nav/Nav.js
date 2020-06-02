@@ -9,7 +9,7 @@ const imageUrl = JoltSettings.URL.template + "/images/";
 const baseUrl = JoltSettings.path;
 const urls = JoltSettings.URL;
 
-const nav = props => (
+const nav = (props) => (
   <nav className="nav">
     <Link to={baseUrl} className="nav__logo-link nav__logo-link--circle">
       <img
@@ -45,6 +45,9 @@ const nav = props => (
 
     <Link to={baseUrl} className="nav__link">
       Home
+    </Link>
+    <Link to={baseUrl + "info"} className="nav__link">
+      Info
     </Link>
     <Link to={baseUrl + "shows"} className="nav__link">
       Shows
