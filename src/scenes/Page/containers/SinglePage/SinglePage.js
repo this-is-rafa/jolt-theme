@@ -19,7 +19,7 @@ const singlePage = (props) => {
       featuredImage =
         props.page["_embedded"]["wp:featuredmedia"][0]["media_details"][
           "sizes"
-        ]["medium"]["source_url"];
+        ]["show-banner"]["source_url"];
     }
   }
 
