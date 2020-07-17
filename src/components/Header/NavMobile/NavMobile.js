@@ -24,6 +24,13 @@ const NavMobile = (props) => (
     >
       Shows
     </Link>
+    <Link
+      to={baseUrl + "apps"}
+      onClick={props.close}
+      className="nav-over__link"
+    >
+      Get the App
+    </Link>
     <a
       href={urls.mixcloud}
       className="nav-over__link"

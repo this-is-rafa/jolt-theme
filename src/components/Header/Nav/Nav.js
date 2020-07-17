@@ -52,6 +52,9 @@ const nav = (props) => (
     <Link to={baseUrl + "shows"} className="nav__link">
       Shows
     </Link>
+    <Link to={baseUrl + "apps"} className="nav__link">
+      Apps
+    </Link>
     <a
       href={urls.mixcloud}
       className="nav__link"
