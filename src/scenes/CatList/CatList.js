@@ -8,7 +8,7 @@ import { decodeEntities } from "@wordpress/html-entities";
 const JoltSettings = window.JoltSettings;
 const baseUrl = JoltSettings.path + "artist/";
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     incrementLoad: () => {
       const action = { type: "LOAD" };
@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
     decrementLoad: () => {
       const action = { type: "UNLOAD" };
       dispatch(action);
-    }
+    },
   };
 };
 
@@ -25,7 +25,7 @@ class CatList extends Component {
   state = {
     posts: [],
     catId: null,
-    catName: ""
+    catName: "",
   };
 
   componentDidMount() {
@@ -39,21 +39,20 @@ class CatList extends Component {
     let slug = url.pop() || url.pop();
 
     fetch(JoltSettings.URL.api + "/artist-category?slug=" + slug)
-      .then(function(response) {
+      .then(function (response) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
         return response.json();
       })
-      .then(function(results) {
+      .then(function (results) {
         _this.setState({
           catId: results[0].id,
-          catName: results[0].name
+          catName: results[0].name,
         });
-        console.log(results[0]);
         _this.getShowsByCatId();
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log("Could not fetch category: " + error.message);
       });
   }
@@ -65,23 +64,23 @@ class CatList extends Component {
     fetch(
       JoltSettings.URL.api + "/artists/?artist-category=" + catId + "&_embed"
     )
-      .then(function(response) {
+      .then(function (response) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
         return response.json();
       })
-      .then(function(results) {
+      .then(function (results) {
         let allPosts = [];
 
-        results.forEach(function(single) {
+        results.forEach(function (single) {
           allPosts.push(single);
         });
 
         _this.setState({ posts: allPosts });
         _this.props.decrementLoad();
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log("Could not fetch posts by category ID: " + error.message);
       });
   }
