@@ -11,7 +11,7 @@
   "wpThemeServer": {
     "enable": true,
     "host": "192.168.64.2",
-    "port": 8090,
+    "port": 443,
     "sslCert": "sslcert/server.crt",
     "sslKey": "sslcert/server.key",
     "watchFile": "../index.php"
