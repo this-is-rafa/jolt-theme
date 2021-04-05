@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import "./scss/style.scss";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+//import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <BrowserRouter>
