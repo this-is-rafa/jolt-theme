@@ -1,5 +1,5 @@
 .banner {
-  animation: .5s 1 fadeInComponent;
+  animation: 0.5s 1 fadeInComponent;
   animation-timing-function: ease-in-out;
   background-position: center center;
   background-size: cover;
@@ -11,11 +11,11 @@
   width: 100%;
   overflow: hidden;
 
-  @include mq('tablet') {
+  @include mq("tablet") {
     margin-bottom: 40px;
   }
 
-  @include mq('desktop') {
+  @include mq("desktop") {
     height: 60vh;
     padding-top: 0;
   }
@@ -61,13 +61,8 @@
   color: $white;
   font-size: 12px;
   font-weight: 400;
-  margin-bottom: 40px;
   table-layout: fixed;
   width: 100%;
-
-  @include mq('tablet') {
-    margin-bottom: 0;
-  }
 
   &__header {
     background-color: transparent;
@@ -111,7 +106,7 @@
 }
 
 .card {
-  animation: .5s 1 fadeInComponent;
+  animation: 0.5s 1 fadeInComponent;
   animation-timing-function: ease-in-out;
   display: block;
   color: $white;
@@ -132,7 +127,7 @@
     left: 0;
     position: absolute;
     right: 0;
-    top: 0;  
+    top: 0;
     width: 100%;
   }
 
@@ -155,11 +150,11 @@
     &--top {
       bottom: 40px;
 
-      @include mq('phablet') {
+      @include mq("phablet") {
         bottom: 44px;
       }
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         bottom: 46px;
       }
     }
@@ -184,11 +179,11 @@
       font-weight: 600;
       text-transform: uppercase;
 
-      @include mq('phablet') {
+      @include mq("phablet") {
         font-size: 15px;
       }
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         font-size: 18px;
       }
     }
@@ -197,11 +192,11 @@
       font-size: 10px;
       font-weight: 400;
 
-      @include mq('phablet') {
+      @include mq("phablet") {
         font-size: 13px;
       }
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         font-size: 14px;
       }
     }
@@ -219,8 +214,8 @@
     caret-color: $primary;
     color: $white;
     font-size: 1;
-    padding: .5em 2.5em .5em .5em;
-    transition: .2s ease all;
+    padding: 0.5em 2.5em 0.5em 0.5em;
+    transition: 0.2s ease all;
     width: 100%;
 
     &::placeholder {
@@ -232,14 +227,14 @@
       outline: 0;
     }
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       font-size: 1.3rem;
-      padding: .5em 2.5em .5em .5em;
+      padding: 0.5em 2.5em 0.5em 0.5em;
     }
   }
 
   &__clear {
-    animation: .2s 1 fadeInComponent;
+    animation: 0.2s 1 fadeInComponent;
     background-color: transparent;
     border: 2px solid lighten($black, 10);
     border-radius: 50%;
@@ -249,7 +244,7 @@
     position: absolute;
     right: 8px;
     top: 8px;
-    transition: .2s ease all;
+    transition: 0.2s ease all;
     width: 25px;
 
     &:hover {
@@ -257,7 +252,7 @@
       border-color: $primary;
     }
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       height: 30px;
       right: 12px;
       top: 12px;
@@ -271,15 +266,15 @@
     margin: 0 auto;
     width: 12px;
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       height: 14px;
       width: 14px;
     }
   }
 }
 
-.no-shows {  
-  animation: .5s 1 fadeInComponent;
+.no-shows {
+  animation: 0.5s 1 fadeInComponent;
   animation-timing-function: ease-in-out;
   color: $white;
   font-size: 1.3rem;
@@ -300,19 +295,19 @@
   right: -7%;
   bottom: -10%;
 
-  @include mq('tablet') {
+  @include mq("tablet") {
     top: -14%;
     right: 4%;
     width: 322px;
   }
 
-  @include mq('tablet-wide') {
+  @include mq("tablet-wide") {
     top: -24%;
     right: 10%;
     width: 422px;
   }
 
-  @include mq('desktop') {
+  @include mq("desktop") {
     top: -91%;
     right: 6%;
     width: 622px;
