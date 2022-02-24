@@ -2,24 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setCurrentShow } from "../../../../actions/actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     events: state.events,
-    currentShow: state.currentShow.title
+    currentShow: state.currentShow.title,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setCurrentShow: events => {
+    setCurrentShow: (events) => {
       dispatch(setCurrentShow(events));
-    }
+    },
   };
 };
 
 class LiveTextBox extends Component {
   state = {
-    textIndent: 0
+    textIndent: 0,
   };
 
   liveTextRef = React.createRef();
@@ -30,7 +30,7 @@ class LiveTextBox extends Component {
     window.addEventListener("resize", this.resetScroll.bind(this));
     window.setInterval(() => {
       this.props.setCurrentShow(this.props.events);
-    }, 180000);
+    }, 60000);
   }
 
   componentWillUnmount() {
@@ -67,7 +67,7 @@ class LiveTextBox extends Component {
         let indent = _this.state.textIndent;
         let leftMax = true;
 
-        const scroll = function() {
+        const scroll = function () {
           if (leftMax) {
             if (liveTextW - Math.abs(indent) > liveTextBoxW) {
               indent = indent - 1;
@@ -85,7 +85,7 @@ class LiveTextBox extends Component {
           }
         };
         _this.intervalId = setInterval(scroll, 1000 / 24);
-        setTimeout(function() {
+        setTimeout(function () {
           _this.setState({ textIndent: 0 });
           clearInterval(_this.intervalId);
         }, 30000);
@@ -95,7 +95,7 @@ class LiveTextBox extends Component {
 
   render() {
     const spanStyle = {
-      textIndent: this.state.textIndent
+      textIndent: this.state.textIndent,
     };
 
     return (
