@@ -321,3 +321,64 @@
     width: 622px;
   }
 }
+
+.mixbanner {
+  align-items: center;
+  background-color: $mixbanner-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 -15px 40px;
+  padding: 10px;
+
+  &:link,
+  &:visited,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $mixbanner-red;
+  }
+
+  @include mq("tablet") {
+    margin: 0 auto 40px;
+  }
+
+  @include mq("desktop") {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: $white;
+    margin-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+
+    @include mq("desktop") {
+      font-size: 24px;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__chevs {
+    display: none;
+
+    @include mq("desktop") {
+      display: inline-block;
+      margin-left: 15px;
+      letter-spacing: 5px;
+      font-size: 26px;
+    }
+  }
+
+  &__logo {
+    fill: white;
+    height: 30px;
+    width: auto;
+  }
+}

@@ -1,12 +1,12 @@
 $breakpoints: (
-  "phone":        320px,
-  "phablet":      405px,
-  "tablet":       768px,
-  "tablet-wide":  1024px,
-  "desktop":      1200px,
-  "desktop-md":   1440px,
-  "desktop-lg":   1600px,
-  "desktop-xl":   1920px,
+  "phone": 320px,
+  "phablet": 405px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1200px,
+  "desktop-md": 1440px,
+  "desktop-lg": 1600px,
+  "desktop-xl": 1920px,
 );
 
 $z-index: (
@@ -17,16 +17,18 @@ $z-index: (
   "header-circle-logo": 10,
   "header": 10,
   "noscript": 10,
-  "load-overlay": 5
+  "load-overlay": 5,
 );
 
-$font-stack: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+$font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 
 // Colors
 $black-dark: #1a1a1a;
 $black: #333;
 $overlay: rgba(18, 18, 18, 0.85);
-$red: #B30000;
-$primary: #FFF41D;
+$red: #b30000;
+$primary: #fff41d;
 $white: #fff;
-
+$mixbanner-blue: #5000ff;
+$mixbanner-red: #a20020;
