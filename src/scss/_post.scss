@@ -1,14 +1,14 @@
 .post-content {
-  animation: .5s 1 fadeInComponent;
+  animation: 0.5s 1 fadeInComponent;
   animation-timing-function: ease-in-out;
-  background-color: shade($white, 10);
-  color: $black;
+  background-color: $black-dark;
+  color: shade($white, 10);
   padding: 20px;
   margin-bottom: 40px;
 
   &__text,
   & p {
-    font-size: 16px; 
+    font-size: 16px;
     line-height: 1.5em;
     margin: 0 0 1em 0;
   }
@@ -16,23 +16,23 @@
   &__link,
   & a {
     display: inline-block;
-    color: $black;
+    color: shade($white, 10);
     position: relative;
 
     &:hover {
-      color: $black;
+      color: shade($white, 10);
       text-decoration: none;
     }
 
     &:after {
-      background-color: $black;
-      bottom: -.1em;
-      content: '';
+      background-color: shade($white, 10);
+      bottom: -0.1em;
+      content: "";
       height: 3px;
-      left: .1em;
+      left: 0.1em;
       position: absolute;
-      transform: rotateZ(-.35deg);
-      transition: .2s ease all;
+      transform: rotateZ(-0.35deg);
+      transition: 0.2s ease all;
       width: 98%;
     }
 
@@ -43,13 +43,13 @@
 }
 
 .post-banner {
-  animation: .5s 1 fadeInComponent;
+  animation: 0.5s 1 fadeInComponent;
   animation-timing-function: ease-in-out;
   border-bottom: 1px solid #3c3c3c;
   margin: 0 -15px 40px;
   position: relative;
 
-  @include mq('tablet') {
+  @include mq("tablet") {
     border: 0;
     margin: 0 0 40px;
   }
@@ -81,7 +81,7 @@
       font-weight: 600;
       text-transform: uppercase;
 
-      @include mq('tablet-wide') {
+      @include mq("tablet-wide") {
         font-size: 22px;
       }
     }
@@ -90,7 +90,7 @@
       font-size: 14px;
       font-weight: 400;
 
-      @include mq('tablet-wide') {
+      @include mq("tablet-wide") {
         font-size: 18px;
       }
     }
@@ -116,6 +116,6 @@
   padding: 20px 20px 13px;
 
   &__btn {
-    margin: 0 .5em .5em 0;
+    margin: 0 0.5em 0.5em 0;
   }
 }
