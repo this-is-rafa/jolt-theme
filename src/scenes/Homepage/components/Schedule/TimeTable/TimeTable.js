@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 
 class TimeTable extends Component {
@@ -47,7 +47,14 @@ class TimeTable extends Component {
   }
 
   render() {
-    return <div className="row no-gutters">{this.renderDays()}</div>;
+    return (
+      <Fragment>
+        <div className="row no-gutters">{this.renderDays()}</div>
+        <p className="schedules__time-disclaimer">
+          All times listed in Miami-time.
+        </p>
+      </Fragment>
+    );
   }
 }
 

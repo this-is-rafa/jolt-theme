@@ -55,6 +55,14 @@
     padding: 0 5px 10px 5px;
     text-transform: uppercase;
   }
+
+  &__time-disclaimer {
+    color: $white;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
 }
 
 .schedule {
