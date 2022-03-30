@@ -63,9 +63,9 @@ const nav = (props) => (
     >
       Archive
     </a>
-    <a href="#contact" className="nav__link">
+    <Link to={baseUrl + "contact"} className="nav__link">
       Contact
-    </a>
+    </Link>
     <NavSearch />
     <a
       href={urls.fb}

@@ -39,14 +39,13 @@ const NavMobile = (props) => (
     >
       Archive
     </a>
-    {/* <a
-      href={urls.iosApp}
+    <Link
+      to={baseUrl + "contact"}
+      onClick={props.close}
       className="nav-over__link"
-      target="_blank"
-      rel="noopener noreferrer"
     >
-      iOS App
-    </a> */}
+      Contact
+    </Link>
     <a
       href={urls.ig}
       className="nav-over__link"
