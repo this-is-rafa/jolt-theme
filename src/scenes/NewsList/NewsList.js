@@ -1,12 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
 import TitleBlock from "../../components/TitleBlock/TitleBlock";
-import PostList from "../../components/PostList/PostList";
 import Button from "../../components/UI/Button/Button";
 
 const JoltSettings = window.JoltSettings;
-const baseUrl = JoltSettings.path + "news/";
 
 const mapStateToProps = (state) => {
   return {

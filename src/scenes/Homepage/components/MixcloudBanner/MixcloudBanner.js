@@ -5,7 +5,7 @@ const mixcloudBanner = () => (
     <a
       href="https://mixcloud.com/joltradio"
       target="_blank"
-      rel="noopener noreferer"
+      rel="noopener noreferrer"
       className="mixbanner"
     >
       <p className="mixbanner__text">
