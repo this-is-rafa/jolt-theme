@@ -12,7 +12,7 @@ function ci_load_custom_post_type_files() {
 		//'inc/post_types/event',
 		//'inc/post_types/discography',
 		//'inc/post_types/video',
-		//'inc/post_types/gallery',
+		'inc/post_types/news',
 		'inc/post_types/artist'
 	));
 	foreach($cpt_files as $cpt_file) get_template_part($cpt_file);

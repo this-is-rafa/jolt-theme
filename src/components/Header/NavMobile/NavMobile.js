@@ -18,6 +18,13 @@ const NavMobile = (props) => (
       Info
     </Link>
     <Link
+      to={baseUrl + "news"}
+      onClick={props.close}
+      className="nav-over__link"
+    >
+      News
+    </Link>
+    <Link
       to={baseUrl + "shows"}
       onClick={props.close}
       className="nav-over__link"

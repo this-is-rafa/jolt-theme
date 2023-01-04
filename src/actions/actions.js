@@ -147,6 +147,14 @@ export const setPostList = (postList) => {
     });
 };
 
+export const setNewsList = (newsList) => {
+  return (dispatch) =>
+    dispatch({
+      type: "SET_NEWSLIST",
+      newsList: newsList,
+    });
+};
+
 export const setTwitchStatus = (twitchStatus) => {
   return {
     type: "SET_TWITCH_STATUS",

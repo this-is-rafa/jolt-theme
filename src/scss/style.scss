@@ -1,17 +1,17 @@
-$enable-flex:               true;
-$enable-grid-classes:       true;
+$enable-flex: true;
+$enable-grid-classes: true;
 
-@import './bootstrap-4.1.3/bootstrap-grid.scss';
-@import './bootstrap-4.1.3/bootstrap-reboot.scss';
+@import "./bootstrap-4.1.3/bootstrap-grid.scss";
+@import "./bootstrap-4.1.3/bootstrap-reboot.scss";
 
-@import 'mixins';
-@import 'variables'; 
+@import "mixins";
+@import "variables";
 
-@import 'root';
-@import 'noscript';
-@import 'header';
-@import 'twitch';
-@import 'homepage';
-@import 'post';
-@import 'footer';
-
+@import "root";
+@import "noscript";
+@import "header";
+@import "twitch";
+@import "homepage";
+@import "post";
+@import "news";
+@import "footer";
