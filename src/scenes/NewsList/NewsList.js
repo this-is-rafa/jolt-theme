@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import * as actionCreators from "../../actions/actions";
 import TitleBlock from "../../components/TitleBlock/TitleBlock";
 import Button from "../../components/UI/Button/Button";
+import { Link } from "react-router-dom";
 
 const JoltSettings = window.JoltSettings;
+const baseUrl = JoltSettings.path + "news/";
 
 const mapStateToProps = (state) => {
   return {
@@ -32,7 +34,7 @@ class NewsList extends Component {
 
     fetch(
       JoltSettings.URL.api +
-        "/news/?_embed&per_page=12&order=desc&page=" +
+        "/news/?_embed&per_page=3&order=desc&page=" +
         _this.props.newsList.page
     )
       .then(function (response) {
@@ -100,10 +102,12 @@ class NewsList extends Component {
               alt={post.title.rendered}
             />
             <div className="post-banner__content post-banner__content--top">
-              <span
-                className="post-banner__titles post-banner__titles--main"
-                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-              />
+              <Link to={baseUrl + post.slug}>
+                <span
+                  className="post-banner__titles post-banner__titles--news"
+                  dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                />
+              </Link>
             </div>
             <div className="post-banner__content">
               <span
@@ -116,6 +120,9 @@ class NewsList extends Component {
             className="post-content"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
+          <div className="post-content post-content--meta">
+            <Link to={baseUrl + post.slug}>Permalink</Link>
+          </div>
         </div>
       );
     });

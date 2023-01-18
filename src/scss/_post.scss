@@ -40,6 +40,16 @@
       background-color: $primary;
     }
   }
+
+  & iframe {
+    max-width: 100%;
+  }
+
+  &--meta {
+    text-align: right;
+    border-top: 1px solid $black;
+    padding: 0.5em 0;
+  }
 }
 
 .post-banner {
@@ -83,6 +93,17 @@
 
       @include mq("tablet-wide") {
         font-size: 22px;
+      }
+    }
+
+    &--news {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $yellow;
+
+      @include mq("tablet-wide") {
+        font-size: 18px;
       }
     }
 
