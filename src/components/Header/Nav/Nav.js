@@ -55,6 +55,9 @@ const nav = (props) => (
     <Link to={baseUrl + "shows"} className="nav__link">
       Shows
     </Link>
+    <Link to={baseUrl + "support"} className="nav__link">
+      Support
+    </Link>
     <Link to={baseUrl + "apps"} className="nav__link">
       Apps
     </Link>

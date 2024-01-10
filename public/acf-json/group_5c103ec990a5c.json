@@ -1,0 +1,94 @@
+{
+    "key": "group_5c103ec990a5c",
+    "title": "Shows",
+    "fields": [
+        {
+            "key": "field_5c103eec24162",
+            "label": "Banner Image",
+            "name": "banner_image",
+            "type": "image",
+            "instructions": "16x9 is best. If no image exists, it will default to the art from the 'featured image'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 1,
+            "edit_in_rest": 0,
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c103f3c24164",
+            "label": "Schedule Description",
+            "name": "schedule_text",
+            "type": "text",
+            "instructions": "Eg. 'Every Wednesday at 7:00pm'. Keep it short.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 1,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c1c1dc60887f",
+            "label": "Calendar ID",
+            "name": "calendar_id",
+            "type": "number",
+            "instructions": "This same number should appear in the Google Calendar description to link the pages to the calendar times.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 1,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "cpt_artist"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1554409531
+}

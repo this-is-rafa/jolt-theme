@@ -187,8 +187,8 @@
   bottom: 0;
   color: $black;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   left: 0;
   position: fixed;
   right: 0;
@@ -204,6 +204,12 @@
 
   @include mq("tablet-wide") {
     display: none;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__link {
