@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import TitleBlock from "../../../../components/TitleBlock/TitleBlock";
 import SetList from "../../../../components/SetList/SetList";
 

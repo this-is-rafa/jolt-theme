@@ -1,5 +1,4 @@
 import React from "react";
-import { decodeEntities } from "@wordpress/html-entities";
 
 const cardCats = props => {
   let catLinks = props.categories.map((cat, i) => {
