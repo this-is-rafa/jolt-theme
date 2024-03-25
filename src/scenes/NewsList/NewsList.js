@@ -56,7 +56,6 @@ class NewsList extends Component {
         return response.json();
       })
       .then(function (results) {
-        console.log(results);
         results.forEach(function (single) {
           allNews.push(single);
         });
@@ -76,7 +75,6 @@ class NewsList extends Component {
 
   renderNewsItems() {
     return this.props.newsList.news.map((post, i) => {
-      console.log(post);
       let date = post.date.split("T")[0];
       let featuredImage = "";
 

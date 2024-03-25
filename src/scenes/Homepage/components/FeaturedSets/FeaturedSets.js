@@ -45,7 +45,6 @@ class FeaturedSets extends Component {
         results.forEach(function (single) {
           allSets.push(single);
         });
-        console.log(allSets);
         _this.setState({ sets: allSets });
         _this.props.decrementLoad();
       })

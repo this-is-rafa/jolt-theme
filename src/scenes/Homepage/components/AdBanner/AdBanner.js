@@ -46,7 +46,6 @@ class AdBanner extends Component {
 
   renderAds(ads) {
     return ads.map((ad, i) => {
-      console.log(ad);
       return (
         <a
           href={ad.url}
