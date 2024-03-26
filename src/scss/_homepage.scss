@@ -465,6 +465,14 @@
     &:not(:first-of-type) {
       margin-top: 20px;
     }
+
+    &:hover {
+      filter: invert(1) hue-rotate(90deg);
+    }
+
+    &--low {
+      margin-bottom: 40px;
+    }
   }
 
   &__img {

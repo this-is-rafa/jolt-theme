@@ -3,7 +3,7 @@ import Banner from "./components/Banner/Banner";
 import AdBanner from "./components/AdBanner/AdBanner";
 import Schedule from "./components/Schedule/Schedule";
 import FeaturedSets from "./components/FeaturedSets/FeaturedSets";
-import YTBanner from "./components/YTBanner/YTBanner";
+import HomeBanners from "./components/HomeBanners/HomeBanners";
 import Donate from "./components/Donate/Donate";
 import UpcomingShows from "./components/UpcomingShows/UpcomingShows";
 
@@ -13,7 +13,7 @@ const homepage = () => (
     <AdBanner />
     <Schedule />
     <FeaturedSets />
-    <YTBanner />
+    <HomeBanners />
     <Donate />
     <UpcomingShows />
   </Fragment>
