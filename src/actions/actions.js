@@ -168,3 +168,10 @@ export const setAudioStatus = (audioStatus) => {
     audioStatus: audioStatus,
   };
 };
+
+export const setYtPlayerStatus = (ytPlayerStatus) => {
+  return {
+    type: "SET_YTPLAYER_STATUS",
+    ytPlayerStatus: ytPlayerStatus,
+  };
+};

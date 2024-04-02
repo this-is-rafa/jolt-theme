@@ -30,6 +30,10 @@ const initialState = {
   audioStatus: {
     playing: false,
   },
+  ytPlayerStatus: {
+    ytCode: null,
+    show: false
+  }
 };
 
 const reducer = (state = initialState, action) => {
@@ -91,6 +95,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         audioStatus: action.audioStatus,
+      };
+    case "SET_YTPLAYER_STATUS":
+      return {
+        ...state,
+        ytPlayerStatus: action.ytPlayerStatus,
       };
     default:
       return state;
