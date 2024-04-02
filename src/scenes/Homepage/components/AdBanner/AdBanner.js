@@ -54,9 +54,9 @@ class AdBanner extends Component {
           className="adbanner__link"
           key={i}
         >
-          <img className="adbanner__img adbanner__img--square" alt={ad.ad_square.alt} src={ad.ad_square.url} />
+          <img className="adbanner__img adbanner__img--square" alt={ad.ad_square.alt} src={ad.ad_square.url} loading="lazy" />
 
-          <img className="adbanner__img adbanner__img--long" alt={ad.ad_wide.alt} src={ad.ad_wide.url} />
+          <img className="adbanner__img adbanner__img--long" alt={ad.ad_wide.alt} src={ad.ad_wide.url} loading="lazy" />
         </a>
       );
     });

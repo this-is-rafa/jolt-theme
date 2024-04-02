@@ -26,7 +26,6 @@ class HomeBanners extends Component {
         return response.json();
       })
       .then(function(results) {
-        console.log(results);
         if (results.home_banners_low.enable){
           _this.setState({
             enable: results.home_banners_low.enable,
