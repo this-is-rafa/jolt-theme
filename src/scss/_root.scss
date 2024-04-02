@@ -1,6 +1,12 @@
+html {
+  scroll-behavior:smooth;
+}
+
 body {
   font-family: $font-stack;
   background: linear-gradient(to bottom, $black 0%, $black-dark 100%);
+  background-image: url('https://www.joltradio.org/wp-content/uploads/2023/04/icon-texture.png');
+  background-size: 256px;
 }
 
 a {
@@ -158,4 +164,55 @@ h6,
       fill: $black-dark;
     }
   }
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: $black-dark;
+  border-radius: 2px;
+  width: 38px;
+  height: 10px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: $black;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -4px;
+  left: -2px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-switch--checked {
+  background: $black-dark;
+}
+.toggle-switch--checked:before {
+  left: 22px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
 }
