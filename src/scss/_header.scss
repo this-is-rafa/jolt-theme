@@ -452,6 +452,11 @@
     &--hide {
       display: none;
     }
+
+    &--video {
+      width: 22px;
+      height: 20px;
+    }
   }
 
   &__scroller {

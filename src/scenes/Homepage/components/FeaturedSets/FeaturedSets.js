@@ -31,7 +31,7 @@ class FeaturedSets extends Component {
     this.props.incrementLoad();
     let _this = this;
 
-    fetch(JoltSettings.URL.api + "/sets/?_embed&per_page=3&order=desc")
+    fetch(JoltSettings.URL.api + "/sets/?_embed&per_page=12&order=desc")
       .then(function(response) {
         if (!response.ok) {
           throw Error(response.statusText);

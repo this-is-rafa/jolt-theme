@@ -3,6 +3,7 @@ import CardYt from "../CardYt/CardYt";
 import CardCats from "../CardCats/CardCats";
 
 class SetList extends Component {
+
   renderSets() {
     return this.props.sets.map((set, i) => {
       let ytCode = set.acf.yt_url.split("=").pop();
@@ -13,6 +14,7 @@ class SetList extends Component {
             link={set.acf.yt_url}
             ytCode={ytCode}
             subtitle={set.acf.set_date}
+            
           />
           <CardCats categories={set.acf.set_categories} />
         </div>
