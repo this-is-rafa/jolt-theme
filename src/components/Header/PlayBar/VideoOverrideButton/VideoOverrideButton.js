@@ -23,7 +23,7 @@ const videoOverrideButton = props => {
         }
         className="play-bar__btn"
       >
-        {props.override ? "Live Video" : "Audio Only"}
+        {props.override ? "Show Video" : "Hide Video"}
       </button>
     );
   }
